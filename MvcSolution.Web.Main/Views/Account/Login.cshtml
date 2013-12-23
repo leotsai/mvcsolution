@@ -1,0 +1,28 @@
+﻿@model AccountLoginViewModel
+
+
+<h1>Login</h1>
+@using (Html.BeginForm("login", "Account", FormMethod.Post, new{@class="form-s"}))
+{
+    <div class="group">
+        <label>Username: </label>
+        @Html.TextBoxFor(x=>x.Username)
+        @Html.ValidationMessageFor(x=>x.Username)
+    </div>
+    <div class="group">
+        <label>Password: </label>
+        @Html.PasswordFor(x=>x.Password)
+        @Html.ValidationMessageFor(x=>x.Password)
+    </div>
+    <div class="group">
+        <label></label>
+        <div class="field">
+            <input type="checkbox" value="true" id="cbRemember" name="RememberMe"/>
+            <label for="cbRemember" class="for">Remember Me</label>
+        </div>
+    </div>
+    <div class="group">
+        <label></label>
+        <input type="submit" class="btn" value="Login"/>
+    </div>
+}

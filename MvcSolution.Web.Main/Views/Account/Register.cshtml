@@ -1,0 +1,27 @@
+﻿@model LayoutViewModel<User>
+
+<script src="~/js/_gen/pages/public/user/register.js"></script>
+
+<h1>Register</h1>
+@using (Html.BeginForm("register", "Account", FormMethod.Post, new{@class="form-s", id="formRegister"}))
+{
+    <div class="group">
+        <label>Username: </label>
+        @Html.TextBoxFor(x=>x.Model.Username)
+        @Html.ValidationMessageFor(x=>x.Model.Username)
+    </div>
+    <div class="group">
+        <label>Name: </label>
+        @Html.TextBoxFor(x=>x.Model.Name)
+        @Html.ValidationMessageFor(x=>x.Model.Name)
+    </div>
+    <div class="group">
+        <label>Password: </label>
+        @Html.PasswordFor(x=>x.Model.Password)
+        @Html.ValidationMessageFor(x=>x.Model.Password)
+    </div>
+    <div class="group">
+        <label></label>
+        <a id="btnRegister" class="btn" href="javascript:void(0);">Register</a>
+    </div>
+}

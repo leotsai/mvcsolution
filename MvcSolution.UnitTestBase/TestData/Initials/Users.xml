@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"  ?>
+<MvcSolutionSchema xmlns="http://tempuri.org/MvcSolutionSchema.xsd">
+  <Users>
+    <Id>1</Id>
+    <Username>admin@gmail.com</Username>
+    <Name>Admin</Name>
+    <Password>sH/jSztdDmw=</Password>
+    <IsDisabled>false</IsDisabled>
+    <CreatedTime>2013-12-21T22:46:00</CreatedTime>
+  </Users>
+</MvcSolutionSchema>

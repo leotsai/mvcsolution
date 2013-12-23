@@ -1,0 +1,60 @@
+﻿@model LayoutViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Title - MvcSolution.codeplex.com</title>
+    <link href="~/css/jqueryui/base/jquery-ui.css" rel="stylesheet" />
+    <link href="~/css/busier/busier.css" rel="stylesheet" />
+    <link href="~/css/core.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+    
+    <script src="~/js/jquery/jquery-1.7.2.min.js"></script>
+    <script src="~/js/jquery/jquery-ui-1.8.20.custom.min.js"></script>
+    <script src="~/js/jquery/jquery.validate.min.js"></script>
+    <script src="~/js/jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/_gen/mvcsolution.core.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div class="header-w1 section-inner">
+                <a id="logo" href="/">public logo</a>
+                <div id="loginStatus">
+                    @if (Request.IsAuthenticated)
+                    {
+                        @:Welcome, @User.Identity.Name | 
+                        <a href="/logout">logout</a>
+                    }
+                    else
+                    {
+                        <a href="/login">login</a>
+                    }
+                </div>
+            </div>
+            
+            <div id="mainNav" class="clearfix">
+                <div class="section-inner">
+                    <a href="/">Home</a>
+                    <a href="javascript:void(0);">Features</a>
+                    <a href="javascript:void(0);">About</a>
+                    <a href="javascript:void(0);">Contact</a>    
+                </div>
+            </div>
+        </div>
+        <div id="main" class="section-inner">
+            <div class="main-w1">
+                <div class="main-w2">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            &copy;2013, 
+            <a href="http://mvcsolution.codeplex.com">http://mvcsolution.codeplex.com</a> | 
+            <a href="javascript:void(0);">cail@novasoftware.cn</a> |
+            <a href="/admin">admin</a>
+        </div>
+    </div>
+</body>
+</html>

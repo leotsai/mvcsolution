@@ -1,0 +1,354 @@
+﻿body
+{
+    background-color: #ffffff;
+    font-size: 13px;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+html,body {	height:100%; }
+#wrapper { min-height: 100%; position: relative; }
+#footer { 
+	position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+	height: 64px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #444444;
+    border-top: 4px solid #222222;
+    color: #ffffff;
+}
+#header {
+    
+}
+.section-inner {
+    width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ios-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+input,textarea,select {
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+}
+a,a:link,.ui-widget-content a {
+    color: #2cabe0;
+}
+a:link.btn,
+.ui-widget-content a.btn {
+    color: #ffffff;
+}
+a:hover
+{
+    color: #3E97EF;
+    text-decoration: none;
+}
+a:active
+{
+    color: #3E97EF;
+}
+
+.clearfix:before, .clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    zoom:1;
+} 
+.float-l {
+    float: left;
+}
+.float-r {
+    float: right;
+}
+div .pin-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.hide {
+    display: none;
+}
+.group.margin-no {
+    margin: 0px;
+}
+.empty {
+    text-align: center;
+    padding: 25px 0;
+}
+img {
+    max-width: 100%;
+}
+[class*="group"]:before, 
+[class*="group"]:after,
+.row:before, 
+.row:after {
+    content:"";
+    display:table;
+}
+[class*="group"]:after,
+.row:after {
+    clear:both;
+}
+[class*="group"],
+.row {
+    zoom: 1;
+}
+.row {
+    margin-left: -25px;
+}
+
+.row {
+    margin-bottom: 15px;
+} 
+.group {
+    margin: 0 0 15px 0;
+}
+.group-l {
+    margin: 0 0 20px 0;
+}
+.group-xl {
+    margin: 0 0 30px 0;
+}
+.group-s {
+    margin: 0 0 10px 0;
+} 
+[class*="span"] {
+    float: left;
+    margin-left: 25px;
+    min-height: 1px;
+}
+.span1{
+    width:68px;
+}
+.span2{
+    width:162px;
+}
+.span3{
+    width:256px;
+}
+.span4{
+    width:350px;
+}
+.span5{
+    width:443px;
+}
+.span6{
+    width:537px;
+}
+.span7{
+    width:631px;
+}
+.span8{
+    width:725px;
+}
+.span9{
+    width:818px;
+}
+.span10{
+    width:912px;
+}
+.span11{
+    width:1006px;
+}
+.span12{
+    width:1100px;
+}
+.columns {
+    margin-left: -30px;
+}
+.column {
+    margin-left: 30px;
+    float: left;
+}
+.column.border-r {
+    padding-right: 30px;
+}
+.border-r {
+    border-right: 1px solid #aaaaaa;
+}
+
+
+.dialog {
+    display: none;
+}
+.clear {
+    clear: both;
+}
+/** form ****************************************/
+.form label,
+form label {
+    display: block;
+    width: 200px;
+    float: left;
+    min-height: 1px;
+}
+.form-s label {
+    width: 120px;
+}
+.form label.for,
+form label.for {
+    display: inline;
+    width: auto;
+    float: none;
+}
+form .field {
+    margin-left: 200px;
+}
+.form-s .field {
+    margin-left: 120px;
+}
+form .field_tip {
+    margin: 0px;
+    padding: 4px 0;
+    color: #aaaaaa;
+}
+form span.required {
+    color: red;
+    padding: 0 3px;
+    vertical-align: bottom;
+}
+.form-error-block .field-validation-error {
+    display: block;
+    margin-top: 5px;
+}
+.form-label-color label{
+    color: #37939B;
+}
+
+.field_text,
+.field_text-s,
+.field_text-xs,
+.field_text-full
+ {
+    padding: 5px;
+    height: 32px;
+    line-height: 22px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ios-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #aaaaaa;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.field_text {
+    width: 350px;
+}
+.field_text-s {
+    width: 200px;
+}
+.field_text-xs {
+    width: 100px;
+}
+.field_text-full {
+    width: 100%;
+}
+textarea.field_text-full {
+    height: 150px;
+}
+.form-s textarea.field_text-full {
+    height: 100px;
+}
+textarea.field_text {
+    height: 150px;
+}
+input.search {
+    background-image: url("images/search.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+select {
+    height: 30px;
+    line-height: 22px;
+    padding: 3px 0;
+}
+    select option.disabled {
+        color: #aaaaaa;
+    }
+select.default {
+    color: #666666;
+}
+    select.default option {
+        color: #333333;
+    }
+    select.default option.disabled {
+        color: #aaaaaa;
+    }
+select.field_text,
+select.field_text-s,
+select.field_text-xs,
+select.field_text-full {
+    padding: 0;
+}
+dl {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+dl dt {
+    font-weight: bold;
+    margin: 0px;
+    color: #888888;
+}
+dl dd {
+    margin: 0px;
+    padding-left: 15px;
+    background: url(images/dot.png) no-repeat 2px 6px;
+}
+.field-validation-error {
+    color: #FF3216;
+    background: url(images/error.png) no-repeat;
+    padding-left: 18px;
+}
+.field-error-block.field-validation-error {
+    margin: 5px 0;
+    display: block;
+}
+.input-validation-error {
+    border-color: #CE6767 #E5A5A5 #E5A5A5 #DB9292;
+    color: #FF3216;
+    border-width: 1px;
+}
+.input-validation-error:hover,.input-validation-error:focus {
+    border-color: #DB4A4A #DB9292 #DB9292 #E06767;
+}
+.btn {
+    -moz-transition: none 0s ease 0s;
+    border: 0 none;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 8px 20px;
+    background-color: #2cabe0;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+}
+.btn:hover {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 5px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    background-color: #3E97EF;
+}
+.btn:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.1);
+    background-color: #3E97EF;
+}

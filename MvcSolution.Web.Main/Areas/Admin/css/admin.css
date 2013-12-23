@@ -1,0 +1,36 @@
+﻿#header {
+    position: relative;
+    background-color: #333333;
+    height: 80px;
+}
+#mainNav a{
+    display: inline-block;
+    line-height: 35px;
+    text-align: center;
+    padding: 0 25px;
+    color: #f0f8ff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#mainNav a:hover {
+    background-color: rgba(200, 200, 200, 0.2);
+}
+#mainNav {
+    background-color: #222222;
+    border-top: 1px solid #444444;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+#logo {
+    position: absolute;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    top: 10px;
+    left: 10px;
+    display: block;
+    padding: 4px 15px;
+    background-color: rgba(200, 200, 200, 0.2);
+    border-radius: 5px;
+}

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"  ?>
+<MvcSolutionSchema xmlns="http://tempuri.org/MvcSolutionSchema.xsd">
+  <Roles>
+    <Id>1</Id>
+    <Name>Admin</Name>
+    <CreatedTime>2012-09-30T20:48:00</CreatedTime>
+  </Roles>
+</MvcSolutionSchema>

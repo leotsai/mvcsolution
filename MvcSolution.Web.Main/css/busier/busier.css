@@ -1,0 +1,111 @@
+﻿
+.busy-indicator
+{
+    position:relative;
+    top:0px;
+    left:0px;
+    z-index:2000;
+    vertical-align: middle;
+    text-align: center;
+}
+.busy-modal
+{
+    background:url(images/modal-black.png);
+}
+.busy-content
+{
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    margin: 0 auto;
+    padding: 3px 10px 3px 3px;
+    position: relative;
+    min-width: 150px;
+    display: inline-block;
+    text-align: left;
+}
+a.busy-cancel {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    background: url(images/remove16.png) no-repeat;
+}
+a.busy-cancel:hover
+{
+    background: url(images/remove16.png) no-repeat 0 -16px;
+}
+.busy-text
+{
+    background: url("images/loading_1.gif") no-repeat scroll 0 0 transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px 3px 3px 3px;
+    min-height: 22px;
+    padding: 8px 5px 5px 35px;
+}
+
+.toast {
+    position: fixed;
+    min-width: 200px;
+    min-height: 60px;
+    background-color: #ffffff;
+    padding: 10px 15px 10px 60px;
+    display: block;
+    z-index: 2001;
+    opacity: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0 0 8px blue;
+    -moz-box-shadow: 0 0 8px blue;
+    -webkit-box-shadow: 0 0 8px blue;
+    behavior: url(/content/css3pie/pie.htc);
+}
+.toast.success {
+    box-shadow: 0 0 8px green;
+    border: 1px solid #A7D642;
+    -moz-box-shadow: 0 0 8px green;
+    -webkit-box-shadow: 0 0 8px green;
+    background: url(images/toast.png) no-repeat 10px 10px #ffffff;
+    color: green;
+}
+.toast.error {
+    box-shadow: 0 0 8px #FF6600;
+    border: 1px solid #FF6600;
+    -moz-box-shadow: 0 0 8px #FF6600;
+    -webkit-box-shadow: 0 0 8px #FF6600;
+    background: url(images/toast.png) no-repeat 10px -158px #ffffff;
+    color: #FF2E00;
+}
+.toast.info {
+    box-shadow: 0 0 8px #aaaaaa;
+    -moz-box-shadow: 0 0 8px #aaaaaa;
+    -webkit-box-shadow: 0 0 8px #aaaaaa;
+    background: url(images/toast.png) no-repeat 10px -358px #ffffff;
+}
+.toast .close {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    background: url(images/remove16.png) no-repeat;
+}
+.toast .close:hover {
+    background: url(images/remove16.png) no-repeat 0 -16px;
+}
+.toast h5 {
+    margin: 10px 0;
+}
+.toast ul {
+    margin: 0px;
+    padding: 0 0 0 20px
+}
+.toast li {
+    margin: 0 0 5px 0;
+}

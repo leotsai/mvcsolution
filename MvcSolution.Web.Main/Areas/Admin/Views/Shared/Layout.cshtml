@@ -1,0 +1,36 @@
+﻿@model LayoutViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin - @Model.Title</title>
+    <link href="~/css/core.css" rel="stylesheet" />
+    <link href="~/areas/admin/css/admin.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a id="logo" href="/admin">admin logo</a>
+            <div id="mainNav" class="clearfix">
+                <a href="javascript:void(0);">Users</a>
+                <a href="javascript:void(0);">Roles</a>
+                <a href="javascript:void(0);">News</a>
+                <a href="javascript:void(0);">Settings</a>
+            </div>
+        </div>
+        <div id="main" class="section-inner">
+            <div class="main-w1">
+                <div class="main-w2">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            &copy;2013, 
+            <a href="http://mvcsolution.codeplex.com">http://mvcsolution.codeplex.com</a> | 
+            <a href="javascript:void(0);">cail@novasoftware.cn</a> |
+            <a href="/">public</a>
+        </div>
+    </div>
+</body>
+</html>
