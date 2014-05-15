@@ -33,6 +33,9 @@
     <Reference Include="EntityFramework">
       <HintPath>..\Libs\EF\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\Libs\EF\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\Libs\UnitTests\nunit.framework.dll</HintPath>
     </Reference>
