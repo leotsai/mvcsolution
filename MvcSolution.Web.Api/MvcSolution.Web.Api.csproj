@@ -55,6 +55,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\HttpContextBaseExtenstions.cs" />
+    <Compile Include="Security\MvcSolutionIdentity.cs" />
+    <Compile Include="Security\TokenAuthorizeAttribute.cs" />
+    <Compile Include="Security\TokenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

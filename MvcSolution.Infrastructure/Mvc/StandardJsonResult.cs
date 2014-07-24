@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using MvcSolution.Infrastructure;
@@ -54,9 +55,8 @@ namespace MvcSolution.Infrastructure.Mvc
 
         public override void ExecuteResult(ControllerContext context)
         {
-            HttpResponseBase response = context.HttpContext.Response;
-            response.ContentType = "application/json";
-            response.Write(Serializer.ToJson(this.ToCustomResult()));
+            var response = context.HttpContext.Response;
+            WriteToResponse(response);
         }
 
         protected virtual IStandardResult ToCustomResult()
@@ -86,6 +86,13 @@ namespace MvcSolution.Infrastructure.Mvc
             {
                 this.Succeed();
             }
+        }
+
+        public void WriteToResponse(HttpResponseBase response)
+        {
+            response.ContentType = "application/json";
+            response.ContentEncoding = Encoding.UTF8;
+            response.Write(Serializer.ToJson(this.ToCustomResult()));
         }
     }
 
