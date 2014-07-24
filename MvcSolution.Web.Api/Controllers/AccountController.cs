@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using MvcSolution.Infrastructure;
 using MvcSolution.Infrastructure.Mvc;
 using MVCSolution.Services.Users;
 using MvcSolution.Web.ViewModels;
@@ -17,7 +18,7 @@ namespace MvcSolution.Web.Api.Controllers
                 var service = Ioc.GetService<IUserService>();
                 if (!service.CanLogin(username, password))
                 {
-                    throw new Exception("invalid username/password.");
+                    throw new KnownException("invalid username/password.");
                 }
             });
             return result;

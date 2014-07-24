@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppContext.cs" />
     <Compile Include="Captcha\CaptchaController.cs" />
     <Compile Include="Captcha\CaptchaVerifyAttribute.cs" />
     <Compile Include="Captcha\Config.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtension.cs" />
     <Compile Include="Extensions\NullableExtensions.cs" />
     <Compile Include="Extensions\RouteCollectionExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Ioc\Ioc.cs" />
     <Compile Include="Ioc\UnityContainerExtensions.cs" />
     <Compile Include="Ioc\UnityDependencyResolver.cs" />
+    <Compile Include="KnownException.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\CommonLogger.cs" />
@@ -124,9 +127,6 @@
     <Compile Include="Utilities\NPOI\ExcelReporter.cs" />
     <Compile Include="Utilities\Pdf\PdfHelper.cs" />
     <Compile Include="Utilities\Serializer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

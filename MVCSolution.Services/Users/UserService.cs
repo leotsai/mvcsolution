@@ -3,6 +3,7 @@ using System.Linq;
 using MvcSolution;
 using MvcSolution.Data.Entities;
 using MvcSolution.Data.Entities;
+using MvcSolution.Infrastructure;
 using MvcSolution.Infrastructure.Security;
 
 namespace MVCSolution.Services.Users
@@ -43,7 +44,7 @@ namespace MVCSolution.Services.Users
             {
                 if (db.Users.Get(user.Username) != null)
                 {
-                    throw new Exception("username already registered.");
+                    throw new KnownException("username already registered.");
                 }
                 user.Password = CryptoService.MD5Encrypt(user.Password);
                 db.Users.Add(user);

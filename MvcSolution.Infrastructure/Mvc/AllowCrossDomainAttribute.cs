@@ -1,6 +1,5 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using MvcSolution.Infrastructure.Extensions;
 
 namespace MvcSolution.Infrastructure.Mvc
 {

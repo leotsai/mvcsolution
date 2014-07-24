@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MvcSolution.Infrastructure.Extensions
+namespace MvcSolution
 {
     public static class NullableExtensions
     {

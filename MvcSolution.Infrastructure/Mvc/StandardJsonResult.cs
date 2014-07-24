@@ -3,12 +3,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcSolution.Infrastructure;
-using MvcSolution.Infrastructure.Extensions;
 using MvcSolution.Infrastructure.Utilities;
 
 namespace MvcSolution.Infrastructure.Mvc
 {
-    public class StandardJsonResult : JsonResult, IStandardResult
+    public class StandardJsonResult : ActionResult, IStandardResult
     {
         #region Implementation of ICustomResult
 
@@ -53,28 +52,10 @@ namespace MvcSolution.Infrastructure.Mvc
 
         #endregion
 
-        public StandardJsonResult()
-        {
-            this.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-        }
-
         public override void ExecuteResult(ControllerContext context)
         {
-            var isHttpGet = context.HttpContext.Request.HttpMethod.Eq("get");
-            if (this.JsonRequestBehavior == JsonRequestBehavior.DenyGet && isHttpGet)
-            {
-                const string error = @"This request has been blocked because sensitive information could be disclosed to third party web sites when this is used in a GET request. To allow GET requests, set JsonRequestBehavior to AllowGet.";
-                throw new InvalidOperationException(error);
-            }
-
             HttpResponseBase response = context.HttpContext.Response;
-            response.ContentType = !String.IsNullOrEmpty(ContentType) ? ContentType : "application/json";
-
-            if (ContentEncoding != null)
-            {
-                response.ContentEncoding = ContentEncoding;
-            }
-
+            response.ContentType = "application/json";
             response.Write(Serializer.ToJson(this.ToCustomResult()));
         }
 

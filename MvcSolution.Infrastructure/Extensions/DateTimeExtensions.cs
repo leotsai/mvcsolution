@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MvcSolution.Infrastructure.Extensions
+namespace MvcSolution
 {
     public static class DateTimeExtensions
     {
@@ -19,7 +19,7 @@ namespace MvcSolution.Infrastructure.Extensions
 
         public static string ToStr(this DateTime? dateTime)
         {
-            if(dateTime==null)
+            if (dateTime == null)
             {
                 return string.Empty;
             }

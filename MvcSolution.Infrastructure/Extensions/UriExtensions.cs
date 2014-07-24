@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvcSolution.Infrastructure.Extensions
+namespace MvcSolution
 {
     public static class UriExtensions
     {

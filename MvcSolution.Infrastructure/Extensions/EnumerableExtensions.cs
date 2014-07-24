@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 
-namespace MvcSolution.Infrastructure.Extensions
+namespace MvcSolution
 {
     public static class EnumerableExtensions
     {

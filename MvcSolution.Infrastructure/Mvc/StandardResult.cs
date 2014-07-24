@@ -41,7 +41,22 @@ namespace MvcSolution.Infrastructure.Mvc
             }
             catch (Exception ex)
             {
-                this.Fail(ex.Message);
+                var message = ex.GetAllMessages();
+                if (AppContext.IsTestServer)
+                {
+                    this.Fail(message);
+                }
+                else
+                {
+                    if (ex is KnownException)
+                    {
+                        this.Fail(message);
+                    }
+                    else
+                    {
+                        this.Fail("服务器未知错误，请重试。如果该问题一直存在，请联系管理员。感谢您的支持。");
+                    }
+                }
             }
         }
 
