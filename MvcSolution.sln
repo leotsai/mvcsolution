@@ -1,7 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{3EE5332B-87EA-4664-846D-DDCAEFC8F64A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "grunt", "grunt", "{73F34C28-F927-4520-AD41-D0E60FBC82B4}"
+	ProjectSection(SolutionItems) = preProject
+		_grunt\Gruntfile.js = _grunt\Gruntfile.js
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.Web", "MvcSolution.Web\MvcSolution.Web.csproj", "{695EA687-9255-4FD4-836B-AF83220C48AC}"
 EndProject
@@ -32,11 +39,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.Web.Admin", "MvcSolution.Web.Admin\MvcSolution.Web.Admin.csproj", "{A4C960AD-2C79-447C-91B7-1D8C11C9B0F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.Web.Api", "MvcSolution.Web.Api\MvcSolution.Web.Api.csproj", "{87FC7D13-B97B-421A-9805-833FB193FE6F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "grunt", "grunt", "{73F34C28-F927-4520-AD41-D0E60FBC82B4}"
-	ProjectSection(SolutionItems) = preProject
-		_grunt\Gruntfile.js = _grunt\Gruntfile.js
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
