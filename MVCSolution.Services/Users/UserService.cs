@@ -52,6 +52,20 @@ namespace MVCSolution.Services.Users
             }
         }
 
+        public SessionUser GetSessionUser(string username)
+        {
+            using (var db = base.NewDB())
+            {
+                var user = db.Users.Get(username);
+                if (user == null)
+                {
+                    return null;
+                }
+                var roleNames = db.Roles.GetUserRoleNames(user.Id);
+                return new SessionUser(user, roleNames);
+            }
+        }
+
         #endregion
     }
 }

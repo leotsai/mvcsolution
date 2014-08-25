@@ -20,13 +20,12 @@ namespace MvcSolution.Web.Security
 
         public override string[] GetRolesForUser(string username)
         {
-            var context = HttpContext.Current;
-            if (context.Session[SessionKeys.UserRoles] == null)
+            var user = HttpContext.Current.Session.GetMvcSolutionSession().User;
+            if (user == null)
             {
-                var service = Ioc.GetService<IUserService>();
-                context.Session[SessionKeys.UserRoles] = service.GetRoles(username);
+                return null;
             }
-            return context.Session[SessionKeys.UserRoles] as string[];
+            return user.Roles;
         }
 
         public override void CreateRole(string roleName)

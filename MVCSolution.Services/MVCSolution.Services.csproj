@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Users\Dtos\SessionUser.cs" />
     <Compile Include="Users\UserService.cs" />
     <Compile Include="IServiceBase.cs" />
     <Compile Include="Users\IUserService.cs" />

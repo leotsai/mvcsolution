@@ -18,5 +18,10 @@ namespace MvcSolution.Data.Entities
         {
             UserInRoles = new List<UserInRole>();
         }
+
+        public class Names
+        {
+            public const string SuperAdmin = "Super Admin";
+        }
     }
 }

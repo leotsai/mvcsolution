@@ -16,5 +16,14 @@ namespace MvcSolution
                          select a;
             return query2.Distinct();
         }
+
+        public static string[] GetUserRoleNames(this IQueryable<Role> query, int userId)
+        {
+            var query2 = from a in query
+                         from b in a.UserInRoles
+                         where b.UserId == userId
+                         select a.Name;
+            return query2.Distinct().ToArray();
+        }
     }
 }

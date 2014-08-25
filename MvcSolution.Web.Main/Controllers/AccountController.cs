@@ -38,6 +38,7 @@ namespace MvcSolution.Web.Main.Controllers
             if (service.CanLogin(model.Username, model.Password))
             {
                 FormsAuthentication.SetAuthCookie(model.Username, model.RememberMe);
+                System.Web.HttpContext.Current.Session.GetMvcSolutionSession().Login(model.Username);
                 return Redirect("/");
             }
             model.Error = "invalid username/password.";
@@ -55,6 +56,7 @@ namespace MvcSolution.Web.Main.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            System.Web.HttpContext.Current.Session.GetMvcSolutionSession().Logout();
             Session.Clear();
             Session.Abandon();
             return RedirectToAction("Login");

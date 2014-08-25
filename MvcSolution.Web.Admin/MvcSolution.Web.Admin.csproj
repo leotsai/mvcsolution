@@ -122,6 +122,10 @@
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MvcSolution.Data\MvcSolution.Data.csproj">
+      <Project>{27B930AE-4F92-4C8E-80DD-0ACF98489B63}</Project>
+      <Name>MvcSolution.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MvcSolution.Web\MvcSolution.Web.csproj">
       <Project>{695EA687-9255-4FD4-836B-AF83220C48AC}</Project>
       <Name>MvcSolution.Web</Name>

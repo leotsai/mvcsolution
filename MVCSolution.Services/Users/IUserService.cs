@@ -13,5 +13,7 @@ namespace MVCSolution.Services.Users
         string[] GetRoles(string username);
         bool CanLogin(string username, string password);
         void Register(User user);
+
+        SessionUser GetSessionUser(string username);
     }
 }
