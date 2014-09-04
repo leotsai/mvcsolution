@@ -1,0 +1,22 @@
+﻿div#uploadImage {
+    text-align: center;
+}
+
+.pic-list-content img {
+    float: left;
+}
+
+.pic-list-content h4 {
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.pic-list-content b {
+    margin-right: 20px;
+}
+#dialogEditor {
+    background: url("../images/line2.png") 300px 0 repeat-y;
+}
+
+
+
