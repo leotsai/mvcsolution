@@ -94,9 +94,6 @@
     <Compile Include="ViewModels\AccountViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\MvcSolution.Web.Admin\css\admin.css">
-      <Link>Areas\Admin\css\admin.css</Link>
-    </Content>
     <Content Include="css\busier\busier.css" />
     <Content Include="css\busier\images\loading_1.gif" />
     <Content Include="css\busier\images\modal-black.png" />
@@ -153,7 +150,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Api\Views\Shared\" />
+    <Folder Include="Areas\" />
     <Folder Include="js\mvcsolution\libs\" />
   </ItemGroup>
   <ItemGroup>
@@ -165,9 +162,9 @@
       <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
       <Name>MvcSolution.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MVCSolution.Services\MVCSolution.Services.csproj">
+    <ProjectReference Include="..\MVCSolution.Services\MvcSolution.Services.csproj">
       <Project>{870ADAD6-B667-4583-BEA0-9C126E117A77}</Project>
-      <Name>MVCSolution.Services</Name>
+      <Name>MvcSolution.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\MvcSolution.Web.Admin\MvcSolution.Web.Admin.csproj">
       <Project>{a4c960ad-2c79-447c-91b7-1d8c11c9b0f3}</Project>
@@ -192,28 +189,7 @@
     <Content Include="Views\Error\Common.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Api\Views\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\MvcSolution.Web.Admin\Views\Home\Index.cshtml">
-      <Link>Areas\Admin\Views\Home\Index.cshtml</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\MvcSolution.Web.Admin\Views\Web.config">
-      <Link>Areas\Admin\Views\Web.config</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\MvcSolution.Web.Admin\Views\Shared\Layout.cshtml">
-      <Link>Areas\Admin\Views\Shared\Layout.cshtml</Link>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Login.cshtml" />

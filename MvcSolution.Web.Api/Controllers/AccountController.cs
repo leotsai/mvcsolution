@@ -1,9 +1,6 @@
-﻿using System;
-using System.Web.Mvc;
-using MvcSolution.Infrastructure;
+﻿using MvcSolution.Infrastructure;
 using MvcSolution.Infrastructure.Mvc;
-using MVCSolution.Services.Users;
-using MvcSolution.Web.ViewModels;
+using MvcSolution.Services.Users;
 
 namespace MvcSolution.Web.Api.Controllers
 {

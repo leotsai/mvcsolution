@@ -1,0 +1,38 @@
+﻿
+@model List<MvcSolution.Services.Users.ManageUserListDto>
+
+<table class="data">
+    <colgroup>
+        <col width="150px"/>
+        <col width="150px"/>
+        <col width="150px"/>
+        <col width="auto"/>
+        <col width="100px"/>
+        <col width="100px"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>部门</th>
+            <th>姓名</th>
+            <th>登陆用户名</th>
+            <th>角色</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr data-id="@item.Id">
+                <td>@item.Department</td>
+                <td>@item.Name</td>
+                <td>@item.Username</td>
+                <td>@string.Join(",", item.Roles)</td>
+                <td>@(item.IsDisabled ? "禁止登陆" : "正常")</td>
+                <td>
+                    <a class="edit-link" href="/user/edit">编辑</a>
+                </td>    
+            </tr>
+        }
+    </tbody>
+</table>

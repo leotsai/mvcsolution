@@ -24,9 +24,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.UnitTestBase", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.Infrastructure", "MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj", "{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCSolution.Services", "MVCSolution.Services\MVCSolution.Services.csproj", "{870ADAD6-B667-4583-BEA0-9C126E117A77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.Services", "MVCSolution.Services\MvcSolution.Services.csproj", "{870ADAD6-B667-4583-BEA0-9C126E117A77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCSolution.UnitTests.Services", "MVCSolution.UnitTests.Services\MVCSolution.UnitTests.Services.csproj", "{62A0C259-67F2-4218-8571-6C3989D9BA47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.UnitTests.Services", "MVCSolution.UnitTests.Services\MvcSolution.UnitTests.Services.csproj", "{62A0C259-67F2-4218-8571-6C3989D9BA47}"
 	ProjectSection(ProjectDependencies) = postProject
 		{87FC7D13-B97B-421A-9805-833FB193FE6F} = {87FC7D13-B97B-421A-9805-833FB193FE6F}
 		{695EA687-9255-4FD4-836B-AF83220C48AC} = {695EA687-9255-4FD4-836B-AF83220C48AC}
@@ -39,6 +39,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.Web.Admin", "MvcSolution.Web.Admin\MvcSolution.Web.Admin.csproj", "{A4C960AD-2C79-447C-91B7-1D8C11C9B0F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.Web.Api", "MvcSolution.Web.Api\MvcSolution.Web.Api.csproj", "{87FC7D13-B97B-421A-9805-833FB193FE6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{578340E9-096A-4FE5-AF5E-E4894A4D8FBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSolution.Analysis", "Modules\MvcSolution.Analysis\MvcSolution.Analysis.csproj", "{10821AE0-D9B3-4A36-9B03-45CA3AB39F41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +86,10 @@ Global
 		{87FC7D13-B97B-421A-9805-833FB193FE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87FC7D13-B97B-421A-9805-833FB193FE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87FC7D13-B97B-421A-9805-833FB193FE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10821AE0-D9B3-4A36-9B03-45CA3AB39F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10821AE0-D9B3-4A36-9B03-45CA3AB39F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10821AE0-D9B3-4A36-9B03-45CA3AB39F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10821AE0-D9B3-4A36-9B03-45CA3AB39F41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +97,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4174C5B2-95F6-4E64-A058-067210802F6F} = {3EE5332B-87EA-4664-846D-DDCAEFC8F64A}
 		{62A0C259-67F2-4218-8571-6C3989D9BA47} = {3EE5332B-87EA-4664-846D-DDCAEFC8F64A}
+		{10821AE0-D9B3-4A36-9B03-45CA3AB39F41} = {578340E9-096A-4FE5-AF5E-E4894A4D8FBF}
 	EndGlobalSection
 EndGlobal

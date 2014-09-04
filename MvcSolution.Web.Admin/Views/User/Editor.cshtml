@@ -1,0 +1,91 @@
+﻿@model MvcSolution.Web.Admin.ViewModels.UserEditorViewModel
+
+@using (Html.BeginForm("save", "user", FormMethod.Post, new {id = "formEditor"}))
+{
+    @Html.HiddenFor(x=>x.DbUser.Id)
+    <table class="form">
+        <colgroup>
+            <col width="150"/>
+            <col/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>部门：</td>
+                <td>
+                    @if (Model.User.IsSuperAdmin())
+                    {
+                        @Html.DropDownListFor(x => x.DbUser.DepartmentId, Model.Departments)
+                    }
+                    else
+                    {
+                        @Model.DepartmentName
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>姓名：</td>
+                <td>
+                    @Html.TextBoxFor(x=>x.DbUser.Name, new{@class="field_text"})
+                    @Html.ValidationMessageFor(x=>x.DbUser.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>登陆用户名：</td>
+                <td>
+                    @Html.TextBoxFor(x=>x.DbUser.Username, new{@class="field_text"})
+                    @Html.ValidationMessageFor(x=>x.DbUser.Username)
+                </td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td>
+                    @if (Model.IsNew)
+                    {
+                        @Html.PasswordFor(x => x.Password, new {@class = "field_text"})
+                        @Html.ValidationMessageFor(x => x.Password)
+                    }
+                    else
+                    {
+                        @Html.PasswordFor(x => x.NewPassword, new {@class = "field_text"})
+                        <span class="field_tip">（如果不填则表示不修改密码）</span>
+                        @Html.ValidationMessageFor(x => x.NewPassword)
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>密码确认：</td>
+                <td>
+                    @if (Model.IsNew)
+                    {
+                        @Html.PasswordFor(x => x.ConfirmPassword, new {@class = "field_text", id="txtPassword"})
+                        @Html.ValidationMessageFor(x => x.ConfirmPassword)
+                    }
+                    else
+                    {
+                        @Html.PasswordFor(x => x.ConfirmNewPassword, new {@class = "field_text", id="txtPassword"})
+                        @Html.ValidationMessageFor(x => x.ConfirmNewPassword)
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>角色：</td>
+                <td id="roles">
+                    @foreach (var role in Model.Roles)
+                    {
+                        <input type="checkbox" id="role@(role.Value)" value="@role.Value" @Html.IsChecked(role.Selected)/>
+                        <label class="for" for="role@(role.Value)">@role.Text</label>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>状态：</td>
+                <td>
+                    <input type="radio" id="rdoNormal" name="DbUser.IsDisabled" value="false" @Html.IsChecked(!Model.DbUser.IsDisabled)/>
+                    <label for="rdoNormal" class="for">正常</label>
+                    <input type="radio" id="rdoDisabled" name="DbUser.IsDisabled" value="true" @Html.IsChecked(Model.DbUser.IsDisabled)/>
+                    <label for="rdoDisabled" class="for">禁止登陆</label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}

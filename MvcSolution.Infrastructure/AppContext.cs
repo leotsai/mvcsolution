@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MvcSolution
 {
     public class AppContext
     {
         private static readonly bool _isTestServer = false;
-        private static readonly string _host ;
+        private static readonly string _host;
+        private static readonly string _winserviceDllFolder;
 
-        public static bool IsTestServer 
+        public static bool IsTestServer
         {
             get { return _isTestServer; }
+        }
+
+        public static string WinServiceDLLFolder
+        {
+            get { return _winserviceDllFolder; }
         }
 
         /// <summary>
@@ -41,7 +44,7 @@ namespace MvcSolution
             {
                 _host = "http://192.168.1.111:10020";
             }
-
+            _winserviceDllFolder = ConfigurationManager.AppSettings["WinServiceDLLFolder"];
         }
     }
 }

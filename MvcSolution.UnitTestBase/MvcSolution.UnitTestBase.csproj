@@ -99,7 +99,8 @@
     <Content Include="TestData\Empty.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\Initials\UserInRoles.xml">
+    <Content Include="TestData\Initials\Departments.xml" />
+    <Content Include="TestData\Initials\UserRoleRLs.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\Initials\Users.xml">

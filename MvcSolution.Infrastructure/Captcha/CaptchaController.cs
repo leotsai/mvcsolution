@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Web.Mvc;
 
 namespace MvcSolution.Infrastructure.Captcha

@@ -7,8 +7,8 @@
     <ProjectGuid>{62A0C259-67F2-4218-8571-6C3989D9BA47}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCSolution.UnitTests.Services</RootNamespace>
-    <AssemblyName>MVCSolution.UnitTests.Services</AssemblyName>
+    <RootNamespace>MvcSolution.UnitTests.Services</RootNamespace>
+    <AssemblyName>MvcSolution.UnitTests.Services</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -65,9 +65,9 @@
       <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
       <Name>MvcSolution.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MVCSolution.Services\MVCSolution.Services.csproj">
+    <ProjectReference Include="..\MVCSolution.Services\MvcSolution.Services.csproj">
       <Project>{870ADAD6-B667-4583-BEA0-9C126E117A77}</Project>
-      <Name>MVCSolution.Services</Name>
+      <Name>MvcSolution.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\MvcSolution.UnitTestBase\MvcSolution.UnitTestBase.csproj">
       <Project>{4174C5B2-95F6-4E64-A058-067210802F6F}</Project>

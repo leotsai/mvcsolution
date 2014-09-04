@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 using System.Web.Security;
-using MVCSolution.Services;
-using MVCSolution.Services.Users;
 
 namespace MvcSolution.Web.Security
 {

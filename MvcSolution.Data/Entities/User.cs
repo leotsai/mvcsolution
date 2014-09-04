@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using MvcSolution.Data.Entities;
+using MvcSolution.Infrastructure;
 
 namespace MvcSolution.Data.Entities
 {
-    public class User : BusinessBase
+    public class User : EntityBase, ISimpleEntity
     {
-        [MaxLength(20),Required]
+        [MaxLength(500), Required]
         [DataType(DataType.EmailAddress, ErrorMessage = "We guess you are entering a valid email address, haha.")]
         public string Username { get; set; }
 
@@ -18,14 +19,23 @@ namespace MvcSolution.Data.Entities
         [Required]
         public string Password { get; set; }
 
-
         public bool IsDisabled { get; set; }
 
-        public virtual ICollection<UserInRole> UserInRoles { get; set; }
+        public Guid? DepartmentId { get; set; }
+
+        public virtual Department Department { get; set; }
+        public virtual ICollection<UserRoleRL> UserRoleRls { get; set; }
 
         public User()
         {
-            UserInRoles = new List<UserInRole>();
+            this.UserRoleRls = new List<UserRoleRL>();
+        }
+
+        public void Update(User user)
+        {
+            this.Username = user.Username;
+            this.Name = user.Name;
+            this.IsDisabled = user.IsDisabled;
         }
     }
 }

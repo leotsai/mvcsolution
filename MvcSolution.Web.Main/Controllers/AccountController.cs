@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Security;
 using MvcSolution.Data.Entities;
 using MvcSolution.Infrastructure.Mvc;
-using MVCSolution.Services.Users;
+using MvcSolution.Services.Users;
 using MvcSolution.Web.Main.ViewModels;
 using MvcSolution.Web.ViewModels;
 

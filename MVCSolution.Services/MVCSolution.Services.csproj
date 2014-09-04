@@ -8,8 +8,8 @@
     <ProjectGuid>{870ADAD6-B667-4583-BEA0-9C126E117A77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCSolution.Services</RootNamespace>
-    <AssemblyName>MVCSolution.Services</AssemblyName>
+    <RootNamespace>MvcSolution.Services</RootNamespace>
+    <AssemblyName>MvcSolution.Services</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -47,12 +47,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Users\Dtos\SessionUser.cs" />
-    <Compile Include="Users\UserService.cs" />
-    <Compile Include="IServiceBase.cs" />
-    <Compile Include="Users\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBase.cs" />
+    <Compile Include="Users\Implementations\DepartmentService.cs" />
+    <Compile Include="Users\Dtos\ManageUserListDto.cs" />
+    <Compile Include="Users\Dtos\SessionUser.cs" />
+    <Compile Include="Users\IDepartmentService.cs" />
+    <Compile Include="Users\IRoleService.cs" />
+    <Compile Include="Users\IUserService.cs" />
+    <Compile Include="Users\Implementations\RoleService.cs" />
+    <Compile Include="Users\Implementations\UserService.cs" />
+    <Compile Include="WinServices\Dtos\TaskDto.cs" />
+    <Compile Include="WinServices\Dtos\TaskExtensions.cs" />
+    <Compile Include="WinServices\Dtos\TaskStatus.cs" />
+    <Compile Include="WinServices\IWinService.cs" />
+    <Compile Include="WinServices\WinService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvcSolution.Data\MvcSolution.Data.csproj">

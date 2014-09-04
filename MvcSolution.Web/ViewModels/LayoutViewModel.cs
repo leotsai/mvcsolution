@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
+using MvcSolution.Services.Users;
 
 namespace MvcSolution.Web.ViewModels
 {
@@ -9,6 +7,11 @@ namespace MvcSolution.Web.ViewModels
     {
         public string Title { get; set; }
         public string Error { get; set; }
+
+        public SessionUser User
+        {
+            get { return HttpContext.Current.Session.GetMvcSolutionSession().User; }
+        }
     }
 
     public class LayoutViewModel<T> : LayoutViewModel

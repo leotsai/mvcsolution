@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace MvcSolution
 {
@@ -33,6 +30,21 @@ namespace MvcSolution
                 return string.Empty;
             }
             return dateTime.Value.ToString(format);
+        }
+
+
+        public static string ToFullStr(this DateTime? dateTime)
+        {
+            if (dateTime == null)
+            {
+                return string.Empty;
+            }
+            return dateTime.Value.ToString("yyyy/M/d HH:mm:ss");
+        }
+
+        public static string ToFullStr(this DateTime dateTime)
+        {
+            return dateTime.ToString("yyyy/M/d HH:mm:ss");
         }
     }
 }

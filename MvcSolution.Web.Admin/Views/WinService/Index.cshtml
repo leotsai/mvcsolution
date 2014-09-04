@@ -1,0 +1,25 @@
+﻿@model MvcSolution.Web.Admin.ViewModels.WinServiceViewModel
+@{
+    Model.Title = "Windows服务管理";
+}
+<script src="~/js/_gen/pages/admin/winservice/index.js"></script>
+<link href="~/css/pages/winservice.css" rel="stylesheet" />
+<h1>
+    @Model.Title
+    <small>
+        @Model.DllFolder
+        <a id="btnUpload"  href="javascript:void(0);">上传</a>
+    </small>
+    <a class="pin-right" href="/admin/winservice/log">日志</a>
+</h1>
+<div class="group">
+    <form id="formSearch" action="/admin/winservice/Search" method="POST" class="label-inline">
+        <label>关键字：</label>
+        <input type="text" class="field_text-s" name="keyword" placeholder="名称，描述，版本等" id="txtKeyword" />
+        @Html.DropDownList("status", Model.TaskStatuses, new {@class="field_text-s"})
+        <a id="btnSearch" class="btn">搜索</a>
+    </form>
+</div>
+<div id="result" class="group">
+    
+</div>

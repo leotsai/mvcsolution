@@ -1,8 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"  ?>
 <MvcSolutionSchema xmlns="http://tempuri.org/MvcSolutionSchema.xsd">
   <Roles>
-    <Id>1</Id>
-    <Name>Admin</Name>
-    <CreatedTime>2012-09-30T20:48:00</CreatedTime>
+    <Id>9F4898FD-03C1-4EAD-A5F6-60F9DACD8566</Id>
+    <Name>Super Admin</Name>
+    <Description>Super Admin, can access to all pages.</Description>
+    <CreatedTime>2014-08-02T13:47:00</CreatedTime>
+  </Roles>
+  <Roles>
+    <Id>675DE611-D0A7-4EB2-A82C-D3DF6A1C7DE4</Id>
+    <Name>Manager</Name>
+    <Description>Can manage depart users.</Description>
+    <CreatedTime>2014-08-02T13:47:00</CreatedTime>
+  </Roles>
+  <Roles>
+    <Id>3A8FFD51-0769-4A49-ACDE-1A32A0CD2102</Id>
+    <Name>Customer Service</Name>
+    <Description>Access to customer service center.</Description>
+    <CreatedTime>2014-08-02T13:47:00</CreatedTime>
+  </Roles>
+  <Roles>
+    <Id>A26E2688-1EF2-431A-A169-A6A452AFFF11</Id>
+    <Name>Sales</Name>
+    <Description>Access to sales center.</Description>
+    <CreatedTime>2014-08-02T13:47:00</CreatedTime>
   </Roles>
 </MvcSolutionSchema>

@@ -39,68 +39,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\Libs\EF\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Practices\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcSolution.Analysis">
+      <HintPath>..\Modules\bin\MvcSolution.Analysis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -109,22 +71,126 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAreaRegistration.cs" />
+    <Compile Include="Bootstrapers\InitializeIocTask.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminControllerBase.cs" />
+    <Compile Include="Controllers\AnalysisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WinServiceController.cs" />
+    <Compile Include="Controllers\_AdminControllerBase.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
+    <Compile Include="ViewModels\AnalysisViewModels.cs" />
+    <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="ViewModels\WinServiceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\admin.css" />
-    <Content Include="Views\Web.config" />
+    <Content Include="css\busier\busier.css" />
+    <Content Include="css\busier\images\loading_1.gif" />
+    <Content Include="css\busier\images\modal-black.png" />
+    <Content Include="css\busier\images\modal-stripe.png" />
+    <Content Include="css\busier\images\modal-white.png" />
+    <Content Include="css\busier\images\remove16.png" />
+    <Content Include="css\busier\images\toast.png" />
+    <Content Include="css\content.css" />
+    <Content Include="css\core.css" />
+    <Content Include="css\images\arrow-down-w.png" />
+    <Content Include="css\images\arrow-down.png" />
+    <Content Include="css\images\arrow-right-3.png" />
+    <Content Include="css\images\arrow-right-b.png" />
+    <Content Include="css\images\arrow-right.png" />
+    <Content Include="css\images\bg-column.png" />
+    <Content Include="css\images\bg-grid.png" />
+    <Content Include="css\images\bg-steps.png" />
+    <Content Include="css\images\check.png" />
+    <Content Include="css\images\collapse.png" />
+    <Content Include="css\images\dot.png" />
+    <Content Include="css\images\error.png" />
+    <Content Include="css\images\expand-collapse-2.png" />
+    <Content Include="css\images\expand-collapse.png" />
+    <Content Include="css\images\expand.png" />
+    <Content Include="css\images\handles.png" />
+    <Content Include="css\images\line2.png" />
+    <Content Include="css\images\link.png" />
+    <Content Include="css\images\menu-more.png" />
+    <Content Include="css\images\project-switch.png" />
+    <Content Include="css\images\refresh-24.png" />
+    <Content Include="css\images\refresh.png" />
+    <Content Include="css\images\save.png" />
+    <Content Include="css\images\savenew.png" />
+    <Content Include="css\images\search.png" />
+    <Content Include="css\images\social-icons.png" />
+    <Content Include="css\images\spliter.png" />
+    <Content Include="css\images\success-48.png" />
+    <Content Include="css\images\success.png" />
+    <Content Include="css\jqueryui\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\jqueryui\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="css\jqueryui\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="css\jqueryui\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\jqueryui\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="css\jqueryui\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="css\jqueryui\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="css\jqueryui\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="css\jqueryui\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\jqueryui\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\jqueryui\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="css\jqueryui\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="css\jqueryui\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\jqueryui\base\jquery-ui.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\pages\picture.css" />
+    <Content Include="css\pages\winservice.css" />
+    <Content Include="Global.asax" />
+    <Content Include="js\admin\libs\FileUpload.js" />
+    <Content Include="js\admin\libs\FrequencySelector.js" />
+    <Content Include="js\admin\libs\requestTypes.js" />
+    <Content Include="js\admin\libs\TimeframeSelector.js" />
+    <Content Include="js\admin\pages\admin\analysis\index\01.page.js" />
+    <Content Include="js\admin\pages\admin\analysis\platforms\01.page.js" />
+    <Content Include="js\admin\pages\admin\users\management\01.page.js" />
+    <Content Include="js\admin\pages\admin\winservice\index\01.page.js" />
+    <Content Include="js\admin\pages\admin\winservice\index\02.details.js" />
+    <Content Include="js\google\chart.js" />
+    <Content Include="js\google\loader.js" />
+    <Content Include="js\jquery\jquery-1.7.2.min.js" />
+    <Content Include="js\jquery\jquery-2.0.3.min.js" />
+    <Content Include="js\admin\core\00.infrastructure\arrayExtensions.js" />
+    <Content Include="js\admin\core\00.infrastructure\busier.js" />
+    <Content Include="js\admin\core\00.infrastructure\dateTimeExtensions.js" />
+    <Content Include="js\admin\core\00.infrastructure\guid.js" />
+    <Content Include="js\admin\core\00.infrastructure\page.js" />
+    <Content Include="js\admin\core\01.ajax\ajax.js" />
+    <Content Include="js\admin\core\02.notification\notification.js" />
+    <Content Include="js\admin\core\03.utils\utils.js" />
+    <Content Include="js\admin\core\09.document-ready\documentready.js" />
+    <Content Include="js\admin\core\admin.js" />
+    <Content Include="js\jquery\jquery-ui-1.8.20.custom.min.js" />
+    <Content Include="js\jquery\jquery.validate.min.js" />
+    <Content Include="js\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="js\_gen\mvcsolution.admin.js" />
+    <Content Include="js\_gen\pages\admin\analysis\index.js" />
+    <Content Include="js\_gen\pages\admin\analysis\platforms.js" />
+    <Content Include="js\_gen\pages\admin\picture\index.js" />
+    <Content Include="js\_gen\pages\admin\users\management.js" />
+    <Content Include="js\_gen\pages\admin\winservice\index.js" />
+    <Content Include="_grunt\Gruntfile.js" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MvcSolution.Data\MvcSolution.Data.csproj">
       <Project>{27B930AE-4F92-4C8E-80DD-0ACF98489B63}</Project>
       <Name>MvcSolution.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
+      <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
+      <Name>MvcSolution.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVCSolution.Services\MvcSolution.Services.csproj">
+      <Project>{870ADAD6-B667-4583-BEA0-9C126E117A77}</Project>
+      <Name>MvcSolution.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\MvcSolution.Web\MvcSolution.Web.csproj">
       <Project>{695EA687-9255-4FD4-836B-AF83220C48AC}</Project>
@@ -132,10 +198,38 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="_grunt\debug.bat" />
+    <Content Include="_grunt\package.json" />
+    <Content Include="_grunt\release.bat" />
+    <Content Include="_grunt\watch.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Analysis\Index.cshtml" />
+    <Content Include="Views\Analysis\Platforms.cshtml" />
+    <Content Include="Views\Error\Common.cshtml" />
+    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\User\Editor.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\WinService\Index.cshtml" />
+    <Content Include="Views\WinService\Log.cshtml" />
+    <Content Include="Views\WinService\Search.cshtml" />
+    <Content Include="Views\WinService\TaskDetails.cshtml" />
+    <Content Include="Views\WinService\Uploader.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -155,7 +249,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:13329/</IISUrl>
+          <IISUrl>http://localhost:13302/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:13302/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

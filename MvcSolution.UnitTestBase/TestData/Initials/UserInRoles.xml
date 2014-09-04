@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"  ?>
-<MvcSolutionSchema xmlns="http://tempuri.org/MvcSolutionSchema.xsd">
-  <UserInRoles>
-    <Id>1</Id>
-    <UserId>1</UserId>
-    <RoleId>1</RoleId>
-    <CreatedTime>2013-12-21T22:46:00</CreatedTime>
-  </UserInRoles>
-</MvcSolutionSchema>

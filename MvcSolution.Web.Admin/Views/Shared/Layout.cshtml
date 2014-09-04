@@ -1,21 +1,43 @@
-﻿@model LayoutViewModel
+﻿@model MvcSolution.Web.ViewModels.LayoutViewModel
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Admin - @Model.Title</title>
+    <title>@Model.Title - 秒赚广告管理控制台</title>
+    <link href="~/css/jqueryui/base/jquery-ui.css" rel="stylesheet" />
+    <link href="~/css/busier/busier.css" rel="stylesheet" />
     <link href="~/css/core.css" rel="stylesheet" />
-    <link href="~/areas/admin/css/admin.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/css/content.css" rel="stylesheet" />
+
+    <script src="~/js/jquery/jquery-1.7.2.min.js"></script>
+    <script src="~/js/jquery/jquery-ui-1.8.20.custom.min.js"></script>
+    <script src="~/js/jquery/jquery.validate.min.js"></script>
+    <script src="~/js/jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/_gen/mvcsolution.admin.js"></script>
+    
+    @RenderSection("header", false)
 </head>
 <body>
     <div id="wrapper">
         <div id="header">
-            <a id="logo" href="/admin">admin logo</a>
+            <div class="header-w1 section-inner">
+                <a id="logo" href="/"></a>
+                <div id="loginStatus">
+                    @if (Request.IsAuthenticated)
+                    {
+                        @:Welcome, @User.Identity.Name | 
+                        <a href="/admin/account/logout">logout</a>
+                    }
+                    else
+                    {
+                        <a href="/admin/account/login">login</a>
+                    }
+                </div>
+            </div>
+            
             <div id="mainNav" class="clearfix">
-                <a href="javascript:void(0);">Users</a>
-                <a href="javascript:void(0);">Roles</a>
-                <a href="javascript:void(0);">News</a>
-                <a href="javascript:void(0);">Settings</a>
+                @Html.Partial("Menu", this.Model)
             </div>
         </div>
         <div id="main" class="section-inner">
@@ -26,10 +48,7 @@
             </div>
         </div>
         <div id="footer">
-            &copy;2013, 
-            <a href="http://mvcsolution.codeplex.com">http://mvcsolution.codeplex.com</a> | 
-            <a href="javascript:void(0);">cail@novasoftware.cn</a> |
-            <a href="/">public</a>
+            &copy;2013
         </div>
     </div>
 </body>

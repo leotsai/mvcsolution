@@ -68,9 +68,9 @@
       <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
       <Name>MvcSolution.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MVCSolution.Services\MVCSolution.Services.csproj">
+    <ProjectReference Include="..\MVCSolution.Services\MvcSolution.Services.csproj">
       <Project>{870ADAD6-B667-4583-BEA0-9C126E117A77}</Project>
-      <Name>MVCSolution.Services</Name>
+      <Name>MvcSolution.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\MvcSolution.Web\MvcSolution.Web.csproj">
       <Project>{695EA687-9255-4FD4-836B-AF83220C48AC}</Project>

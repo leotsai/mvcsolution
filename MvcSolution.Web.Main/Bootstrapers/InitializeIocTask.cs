@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using MVCSolution.Services;
+using MvcSolution.Services;
 using MvcSolution.Infrastructure;
 using Microsoft.Practices.Unity;
 
@@ -18,7 +18,7 @@ namespace MvcSolution.Web.Main.Bootstrapers
         public void Execute()
         {
             DependencyResolver.SetResolver(new UnityDependencyResolver(_unityContainer));
-            _unityContainer.RegisterInheritedTypes(typeof(ServiceBase<>));
+            _unityContainer.RegisterInheritedTypes(typeof(ServiceBase).Assembly, typeof(ServiceBase));
         }
 
         #endregion

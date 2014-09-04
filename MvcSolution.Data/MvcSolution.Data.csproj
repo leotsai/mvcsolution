@@ -53,20 +53,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MvcSolutionDataContext.cs" />
-    <Compile Include="Dtos\SimpleEntity.cs" />
-    <Compile Include="ModelMappings\UserInRoleMapping.cs" />
-    <Compile Include="Entities\BusinessBase.cs" />
-    <Compile Include="Entities\Extensions\BusinessBaseExtensions.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\DepartmentUserRL.cs" />
+    <Compile Include="Entities\Extensions\ScheduledTaskExtensions.cs" />
+    <Compile Include="Entities\ScheduledTask.cs" />
+    <Compile Include="Entities\ServiceLog.cs" />
+    <Compile Include="Entities\UserRoleRL.cs" />
+    <Compile Include="Enums\Platform.cs" />
+    <Compile Include="Enums\ServiceLogLevel.cs" />
+    <Compile Include="Mappings\UserRoleRLMapping.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\Extensions\EntityBaseExtensions.cs" />
     <Compile Include="Entities\Extensions\RoleExtensions.cs" />
     <Compile Include="Entities\Extensions\UserExtensions.cs" />
-    <Compile Include="Entities\ICloneable.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserInRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <ProjectReference Include="..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
+      <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
+      <Name>MvcSolution.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,25 +3,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MvcSolution.Data.Entities
 {
-    public class Role : BusinessBase
+    public class Role : EntityBase
     {
-        [MaxLength(100)]
-        [Required]
+        [Required,MaxLength(50)]
         public string Name { get; set; }
-
-        [MaxLength(500)]
+        
+        [MaxLength(200)]
         public string Description { get; set; }
 
-        public virtual ICollection<UserInRole> UserInRoles { get; set; }
-
-        public Role()
-        {
-            UserInRoles = new List<UserInRole>();
-        }
+        public virtual ICollection<UserRoleRL> UserRoleRls { get; set; }
 
         public class Names
         {
             public const string SuperAdmin = "Super Admin";
+            public const string Manager = "Manager";
+
+            public const string CustomerService = "Customer Service";
+            public const string Sales = "Sales";
         }
     }
 }

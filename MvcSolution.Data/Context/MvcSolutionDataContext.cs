@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using MvcSolution.Data.Entities;
-using MvcSolution.Data.ModelMappings;
-using MvcSolution.Data.Entities;
+using MvcSolution.Data.Mappings;
 
 namespace MvcSolution.Data.Context
 {
     public class MvcSolutionDataContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<DepartmentUserRL> DepartmentUserRls { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<UserInRole> UserInRoles { get; set; }
+        public DbSet<ScheduledTask> ScheduledTasks { get; set; }
+        public DbSet<ServiceLog> ServiceLogs { get; set; } 
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserRoleRL> UserRoleRls { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
-            modelBuilder.Configurations.Add(new UserInRoleMapping());
+            modelBuilder.Configurations.Add(new UserRoleRLMapping());
         }
-
-        #region Implementation of IUnitOfWork
 
         public bool TrySave()
         {
@@ -33,7 +32,5 @@ namespace MvcSolution.Data.Context
             }
             return true;
         }
-
-        #endregion
     }
 }

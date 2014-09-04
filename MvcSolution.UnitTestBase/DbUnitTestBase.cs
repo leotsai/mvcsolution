@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.IO;
-using MvcSolution.Data.Context;
+﻿using MvcSolution.Data.Context;
 using MvcSolution.UnitTestBase.Framework;
 using NDbUnit.Core;
 using NDbUnit.Core.SqlClient;

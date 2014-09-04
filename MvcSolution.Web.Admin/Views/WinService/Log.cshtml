@@ -1,0 +1,57 @@
+﻿@model MvcSolution.Web.Admin.ViewModels.WinServiceLogsViewModel
+
+<h1>
+    @Model.Title
+    @if (Model.TaskId.HasValue)
+    {
+        <small><a id="btnClearLogs" href="/winservice/clearLogs?taskId=@Model.TaskId.Value">清除日志</a></small>
+    }
+</h1>
+
+
+@if (Model.Logs.Count == 0)
+{
+    <div class="warning">没有日志</div>
+}
+
+@{
+    var months = Model.Logs.GroupBy(x => x.CreatedTime.ToString("yyyy年MM月")).ToList();
+}
+@foreach (var month in months.OrderByDescending(x=>x.Key))
+{
+    var row = 0;
+    <div class="month">
+        <h2 class="log-month">@month.Key</h2>
+        <table class="logs">
+            <colgroup>
+                <col width="150"/>
+                <col width="250"/>
+                <col/>
+            </colgroup>
+            <tbody>
+                
+                @foreach (var log in month.OrderByDescending(x => x.CreatedTime))
+                {
+                    <tr class="@(row%2 == 0 ? "" : "alt")">
+                        <td>@log.CreatedTime.ToString("dd日 hh:mm:ss")</td>
+                        <td>
+                            <span class="log-title">【@log.Level.ToString()】【@log.Name】</span>
+                        </td>
+                        <td>@log.Description</td>
+                    </tr>
+                    row++;
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function() {
+        $("#btnClearLogs").click(function(e) {
+            if (!confirm("确定要清除该任务的所有日志吗？")) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>
