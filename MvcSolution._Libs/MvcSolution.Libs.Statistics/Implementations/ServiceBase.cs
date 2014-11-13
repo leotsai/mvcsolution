@@ -4,9 +4,9 @@ namespace MvcSolution.Libs.Statistics.Implementations
 {
     public class ServiceBase
     {
-        protected AnalysisDataContext NewDB()
+        protected StatisticsDataContext NewDB()
         {
-            return new AnalysisDataContext();
+            return new StatisticsDataContext();
         }
     }
 }
