@@ -162,10 +162,6 @@
       <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
       <Name>MvcSolution.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MVCSolution.Services\MvcSolution.Services.csproj">
-      <Project>{870ADAD6-B667-4583-BEA0-9C126E117A77}</Project>
-      <Name>MvcSolution.Services</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MvcSolution.Web.Admin\MvcSolution.Web.Admin.csproj">
       <Project>{a4c960ad-2c79-447c-91b7-1d8c11c9b0f3}</Project>
       <Name>MvcSolution.Web.Admin</Name>

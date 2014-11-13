@@ -10,12 +10,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvcSolution.Data</RootNamespace>
     <AssemblyName>MvcSolution.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,49 +35,42 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\Libs\EF\EntityFramework.dll</HintPath>
+      <HintPath>..\_libs\EF\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>..\Libs\Practices\Microsoft.Practices.Unity.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\Practices\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MvcSolutionDataContext.cs" />
     <Compile Include="Entities\Department.cs" />
     <Compile Include="Entities\DepartmentUserRL.cs" />
-    <Compile Include="Entities\Extensions\ScheduledTaskExtensions.cs" />
-    <Compile Include="Entities\ScheduledTask.cs" />
-    <Compile Include="Entities\ServiceLog.cs" />
     <Compile Include="Entities\UserRoleRL.cs" />
-    <Compile Include="Enums\Platform.cs" />
-    <Compile Include="Enums\ServiceLogLevel.cs" />
     <Compile Include="Mappings\UserRoleRLMapping.cs" />
     <Compile Include="Entities\EntityBase.cs" />
-    <Compile Include="Entities\Extensions\EntityBaseExtensions.cs" />
-    <Compile Include="Entities\Extensions\RoleExtensions.cs" />
-    <Compile Include="Entities\Extensions\UserExtensions.cs" />
+    <Compile Include="EntityExtensions\EntityBaseExtensions.cs" />
+    <Compile Include="EntityExtensions\RoleExtensions.cs" />
+    <Compile Include="EntityExtensions\UserExtensions.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
-      <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
+      <Project>{6f3a11f2-85b8-4f63-945d-ae75e7014ec6}</Project>
       <Name>MvcSolution.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,19 +1,28 @@
 ﻿using System.IO;
-using System.Web.Script.Serialization;
+using System.Text;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
-namespace MvcSolution.Infrastructure.Utilities
+namespace MvcSolution.Infrastructure
 {
     public static class Serializer
     {
         public static string ToJson(object entity)
         {
-            return new JavaScriptSerializer().Serialize(entity);
+            var converter = new IsoDateTimeConverter();
+            converter.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
+            var serializer = new JsonSerializer();
+            serializer.Converters.Add(converter);
+
+            var sb = new StringBuilder();
+            serializer.Serialize(new JsonTextWriter(new StringWriter(sb)), entity);
+            return sb.ToString();
         }
 
         public static T FromJson<T>(string json)
         {
-            return new JavaScriptSerializer().Deserialize<T>(json);
+            return JsonConvert.DeserializeObject<T>(json);
         }
 
         public static string ToXml<T>(T obj)

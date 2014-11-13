@@ -3,11 +3,11 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Practices.EnterpriseLibrary.Security.Cryptography;
 
-namespace MvcSolution.Infrastructure.Security
+namespace MvcSolution.Infrastructure
 {
     public class CryptoService
     {
-        internal const string PasswordKey = "MvcS0lk$";
+        internal const string PasswordKey = "MvcSLN";
         private const string HashKey = "SHA256Managed";
 
         public static string HashEncrypt(string input)

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"  ?>
+<MvcSolutionSchema xmlns="http://tempuri.org/MvcSolutionSchema.xsd">
+  <Departments>
+    <Id>ADD6CF3C-37C9-47CB-89F3-69F5A78FDB0B</Id>
+    <Name>Sales</Name>
+    <Roles>Sales</Roles>
+    <CreatedTime>2014-08-04T11:35:00</CreatedTime>
+  </Departments>
+  <Departments>
+    <Id>D3813DA5-AE61-405C-9C39-6C014308A34F</Id>
+    <Name>Customer Service</Name>
+    <Roles>Customer Service</Roles>
+    <CreatedTime>2014-08-04T11:35:00</CreatedTime>
+  </Departments>
+</MvcSolutionSchema>

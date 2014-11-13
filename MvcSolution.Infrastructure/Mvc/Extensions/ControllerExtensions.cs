@@ -2,7 +2,7 @@
 using System.Text;
 using System.Web.Mvc;
 
-namespace MvcSolution.Infrastructure.Mvc.Extensions
+namespace MvcSolution
 {
     public static class ControllerExtensions
     {

@@ -51,7 +51,7 @@ namespace MvcSolution.Infrastructure.Captcha
 
                     var path = new GraphicsPath();
                     path.AddString(captchaText, font.FontFamily, (int)font.Style, font.Size, rect, fontFormat);
-                    using (var solidBrush = new SolidBrush(Color.Blue))
+                    using (var solidBrush = new SolidBrush(Color.DimGray))
                     {
                         graphics.FillPath(solidBrush, DeformPath(path));
                     }

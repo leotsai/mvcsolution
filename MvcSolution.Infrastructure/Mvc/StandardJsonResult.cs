@@ -3,12 +3,13 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using MvcSolution.Infrastructure.Utilities;
 
 namespace MvcSolution.Infrastructure.Mvc
 {
     public class StandardJsonResult : ActionResult, IStandardResult
     {
+        public string ContentType { get; set; }
+
         #region Implementation of ICustomResult
 
         public bool Success { get; set; }
@@ -89,7 +90,14 @@ namespace MvcSolution.Infrastructure.Mvc
 
         public void WriteToResponse(HttpResponseBase response)
         {
-            response.ContentType = "application/json";
+            if (string.IsNullOrEmpty(this.ContentType))
+            {
+                response.ContentType = "application/json";
+            }
+            else
+            {
+                response.ContentType = this.ContentType;
+            }
             response.ContentEncoding = Encoding.UTF8;
             response.Write(Serializer.ToJson(this.ToCustomResult()));
         }
