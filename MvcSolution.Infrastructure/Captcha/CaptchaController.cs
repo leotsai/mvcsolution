@@ -2,7 +2,7 @@
 using System.Drawing.Imaging;
 using System.Web.Mvc;
 
-namespace MvcSolution.Infrastructure.Captcha
+namespace MvcSolution.Infrastructure
 {
     public class CaptchaController : Controller
     {

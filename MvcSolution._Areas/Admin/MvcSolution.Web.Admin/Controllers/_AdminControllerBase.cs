@@ -4,7 +4,7 @@ using MvcSolution.Web.Controllers;
 
 namespace MvcSolution.Web.Admin.Controllers
 {
-    //[Authorize(Roles = Role.Names.SuperAdmin)]
+    [Authorize(Roles = Role.Names.SuperAdmin)]
     public abstract class AdminControllerBase : MvcSolutionControllerBase
     {
         protected override string AreaName

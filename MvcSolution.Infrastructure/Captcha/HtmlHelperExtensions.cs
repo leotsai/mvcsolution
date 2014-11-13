@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace MvcSolution.Infrastructure.Captcha
+namespace MvcSolution.Infrastructure
 {
     public static class HtmlHelperExtensions
     {

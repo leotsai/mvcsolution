@@ -1,4 +1,4 @@
-﻿namespace MvcSolution.Infrastructure.Captcha
+﻿namespace MvcSolution.Infrastructure
 {
     public class Config
     {

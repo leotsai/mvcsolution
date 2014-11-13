@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
-namespace MvcSolution.Infrastructure.Captcha
+namespace MvcSolution.Infrastructure
 {
     internal class ImageBuilder
     {

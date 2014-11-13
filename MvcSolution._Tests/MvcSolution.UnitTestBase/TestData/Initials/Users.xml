@@ -4,7 +4,7 @@
     <Id>B45B8212-7583-4E4D-8B4E-7DB7490B1B80</Id>
     <Username>admin@gmail.com</Username>
     <Name>Admin</Name>
-    <Password>sH/jSztdDmw=</Password><!--111111-->
+    <Password>KGxTcOZh9bY=</Password><!--123456-->
     <IsDisabled>false</IsDisabled>
     <CreatedTime>2013-12-21T22:46:00</CreatedTime>
   </Users>
@@ -12,7 +12,7 @@
     <Id>6889F48B-6330-47CC-9D97-0D14DE94B50F</Id>
     <Username>leo.tsai.2010@gmail.com</Username>
     <Name>Leo</Name>
-    <Password>sH/jSztdDmw=</Password><!--111111-->
+    <Password>KGxTcOZh9bY=</Password><!--123456-->
     <IsDisabled>false</IsDisabled>
     <DepartmentId>ADD6CF3C-37C9-47CB-89F3-69F5A78FDB0B</DepartmentId>
     <CreatedTime>2013-12-21T22:46:00</CreatedTime>

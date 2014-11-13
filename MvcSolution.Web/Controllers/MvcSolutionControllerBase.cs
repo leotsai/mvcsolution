@@ -2,6 +2,7 @@
 using MvcSolution.Infrastructure;
 using MvcSolution.Infrastructure.Mvc;
 using MvcSolution.Services;
+using MvcSolution.Web.Security;
 using MvcSolution.Web.ViewModels;
 
 namespace MvcSolution.Web.Controllers
@@ -56,6 +57,11 @@ namespace MvcSolution.Web.Controllers
         protected virtual string GetErrorViewPath()
         {
             return "~/Views/Shared/Error.cshtml";
+        }
+
+        protected MvcSolutionSession GetSession()
+        {
+            return System.Web.HttpContext.Current.Session.GetMvcSolutionSession();
         }
     }
 }
