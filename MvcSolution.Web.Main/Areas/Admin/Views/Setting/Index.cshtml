@@ -1,0 +1,53 @@
+﻿@model SettingIndexViewModel
+@{
+    Model.Title = "系统设置";
+}
+<script src="~/js/mvcsolution/admin/setting/index.js"></script>
+<div class="group">
+    上次缓存版本：@SettingContext.Instance.Version   
+    <a href="/admin/setting/refresh">刷新内存</a>
+</div>
+<div class="group">
+    <table class="grid">
+        <colgroup>
+            <col width="200px" />
+            <col width="200px" />
+            <col width="200px" />
+            <col width="300px" />
+            <col width="auto" />
+            <col width="100px" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>键（内存）</th>
+                <th>值（内存）</th>
+                <th>键（数据库）</th>
+                <th>值（数据库）</th>
+                <th>备注</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Settings)
+            {
+                <tr class="@(item.DbValue != item.MemValue ? "error" : string.Empty)">
+                    <td>@item.MemKey</td>
+                    <td>@item.MemValue</td>
+                    <td class="db-key">@item.DbKey</td>
+                    <td class="db-value">
+                        <span>@item.DbValue</span>
+                        <input type="text" class="txt hide" value="@item.DbValue"/>
+                    </td>
+                    <td>@item.Notes</td>
+                    <td class="center">
+                        <a href="javascript:void(0);" class="btn-edit">编辑</a>
+                        <div class="hide save">
+                            <a href="javascript:void(0);" class="btn-save">保存</a> |
+                            <a href="javascript:void(0);" class="btn-cancel">取消</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

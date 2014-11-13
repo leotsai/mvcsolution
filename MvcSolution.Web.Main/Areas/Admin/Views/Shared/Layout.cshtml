@@ -1,0 +1,47 @@
+﻿@model LayoutViewModel
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@Model.Title - Admin</title>
+        <link href="~/css/jqueryui/base/jquery-ui.css" rel="stylesheet" />
+        <link href="~/css/busier/busier.css" rel="stylesheet" />
+        <link href="~/css/mvcsolution/admin/core.css" rel="stylesheet" />
+
+
+        <script src="~/js/jquery/jquery-1.7.2.min.js"></script>
+        <script src="~/js/jquery/jquery-ui-1.8.20.custom.min.js"></script>
+        <script src="~/js/jquery/jquery.validate.min.js"></script>
+        <script src="~/js/jquery/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/js/mvcsolution.core.js"></script>
+    
+        @RenderSection("header", false)
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <a id="logo" href="/admin">Admin Control Center</a>
+                <div id="loginStatus">
+                    @if (Request.IsAuthenticated)
+                    {
+                        @:Welcome, @User.Identity.Name |
+                        <a href="/logout" class="logout">logout</a>
+                    }
+                    else
+                    {
+                        <a href="/admin/login">login</a>
+                    }
+                </div>
+                <div id="mainNav" class="clearfix">
+                    @Html.Partial("Menu", Model)
+                </div>
+            </div>
+            <div id="main">
+                @RenderBody()
+            </div>
+            <div id="footer">
+                &copy;@DateTime.Now.Year <a href="https://github.com/leotsai/mvcsolution" target="_blank">leo</a>
+            </div>
+        </div>
+    </body>
+</html>
