@@ -17,7 +17,7 @@ namespace MvcSolution.Web.Main
         protected override void RegisterRoutes(RouteCollection routes)
         {
             var defaults = new { controller = "home", action = "index", id = UrlParameter.Optional };
-            var ns = new[] { "MvcSolution.Web.Publics.Controllers.*" };
+            var ns = new[] { "MvcSolution.Web.Public.Controllers.*" };
 
             routes.Map("{controller}/{action}/{id}", defaults, ns);
 

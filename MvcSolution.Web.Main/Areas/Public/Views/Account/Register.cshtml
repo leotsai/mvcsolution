@@ -1,24 +1,24 @@
-﻿@model LayoutViewModel<User>
+﻿@model RegisterViewModel
 
-<script src="~/js/_gen/pages/public/user/register.js"></script>
+<script src="~/js/mvcsolution/public/account/register.js"></script>
 
 <h1>Register</h1>
 @using (Html.BeginForm("register", "Account", FormMethod.Post, new{@class="form-s", id="formRegister"}))
 {
     <div class="group">
         <label>Username: </label>
-        @Html.TextBoxFor(x=>x.Model.Username)
-        @Html.ValidationMessageFor(x=>x.Model.Username)
+        @Html.TextBoxFor(x=>x.Username)
+        @Html.ValidationMessageFor(x=>x.Username)
     </div>
     <div class="group">
         <label>Name: </label>
-        @Html.TextBoxFor(x=>x.Model.Name)
-        @Html.ValidationMessageFor(x=>x.Model.Name)
+        @Html.TextBoxFor(x=>x.Name)
+        @Html.ValidationMessageFor(x=>x.Name)
     </div>
     <div class="group">
         <label>Password: </label>
-        @Html.PasswordFor(x=>x.Model.Password)
-        @Html.ValidationMessageFor(x=>x.Model.Password)
+        @Html.PasswordFor(x=>x.Password)
+        @Html.ValidationMessageFor(x=>x.Password)
     </div>
     <div class="group">
         <label></label>

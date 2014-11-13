@@ -10,7 +10,9 @@ module.exports = function (grunt) {
             }
         },
         "public": {
-            
+            account: {
+                register: []
+            }
         }
     };
 

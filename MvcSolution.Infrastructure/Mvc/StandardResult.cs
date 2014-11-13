@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data.Entity.Validation;
+using System.Linq;
+using System.Web;
 
 namespace MvcSolution.Infrastructure.Mvc
 {
@@ -30,34 +33,6 @@ namespace MvcSolution.Infrastructure.Mvc
         {
             this.Success = false;
             this.Message = message;
-        }
-
-        public void Try(Action action)
-        {
-            try
-            {
-                action();
-                this.Succeed();
-            }
-            catch (Exception ex)
-            {
-                var message = ex.GetAllMessages();
-                if (AppContext.IsTestServer)
-                {
-                    this.Fail(message);
-                }
-                else
-                {
-                    if (ex is KnownException)
-                    {
-                        this.Fail(message);
-                    }
-                    else
-                    {
-                        this.Fail("服务器未知错误，请重试。如果该问题一直存在，请联系管理员。感谢您的支持。");
-                    }
-                }
-            }
         }
 
         #endregion

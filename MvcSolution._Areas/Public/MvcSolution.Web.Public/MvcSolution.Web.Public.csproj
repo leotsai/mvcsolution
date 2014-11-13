@@ -31,7 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_libs\Mvc\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +45,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="PublicAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\_PublicControllerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MvcSolution.Data\MvcSolution.Data.csproj">
+      <Project>{27b930ae-4f92-4c8e-80dd-0acf98489b63}</Project>
+      <Name>MvcSolution.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
+      <Project>{6f3a11f2-85b8-4f63-945d-ae75e7014ec6}</Project>
+      <Name>MvcSolution.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MvcSolution.Services\MvcSolution.Services.csproj">
+      <Project>{870adad6-b667-4583-bea0-9c126e117a77}</Project>
+      <Name>MvcSolution.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MvcSolution.Web\MvcSolution.Web.csproj">
+      <Project>{957418c4-7ae4-463b-b25e-fc511c2855b0}</Project>
+      <Name>MvcSolution.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSolution.Services.Public\MvcSolution.Services.Public.csproj">
+      <Project>{c61c2105-e419-4e43-8548-4b18194d9718}</Project>
+      <Name>MvcSolution.Services.Public</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

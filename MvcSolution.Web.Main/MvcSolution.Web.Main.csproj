@@ -107,8 +107,12 @@
     <Content Include="css\mvcsolution\admin\images\menu-more.png" />
     <Content Include="css\mvcsolution\admin\images\modal.png" />
     <Content Include="css\mvcsolution\admin\images\progressing.gif" />
+    <Content Include="css\mvcsolution\public\core.css" />
+    <Content Include="css\mvcsolution\public\images\error.png" />
+    <Content Include="css\mvcsolution\public\main.css" />
     <Content Include="Global.asax" />
     <Content Include="js-source\admin\setting\index\01.page.js" />
+    <Content Include="js-source\public\account\register\01.page.js" />
     <Content Include="js-source\_core\00.mvcsolution.js" />
     <Content Include="js-source\_core\01.ajax.js" />
     <Content Include="js-source\_core\01.busier.js" />
@@ -121,6 +125,7 @@
     <Content Include="js\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="js\mvcsolution.core.js" />
     <Content Include="js\mvcsolution\admin\setting\index.js" />
+    <Content Include="js\mvcsolution\public\account\register.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -135,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\mvcsolution\_images\" />
-    <Folder Include="js-source\public\" />
     <Folder Include="js-source\_libs\" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +205,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Public\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Public\Views\Shared\Layout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -47,7 +48,36 @@ namespace MvcSolution.Infrastructure.Mvc
             }
             catch (Exception ex)
             {
-                this.Fail(ex.Message);
+                if (AppContext.IsTestServer || HttpContext.Current.Request.IsLocal)
+                {
+                    if (ex is DbEntityValidationException)
+                    {
+                        var dbEx = ex as DbEntityValidationException;
+                        var errors = dbEx.EntityValidationErrors.Where(x => !x.IsValid)
+                            .SelectMany(x => x.ValidationErrors)
+                            .Select(x => x.PropertyName + ": " + x.ErrorMessage);
+                        this.Fail("数据验证错误：<br/>" + string.Join("<br/>", errors));
+                    }
+                    else
+                    {
+                        this.Fail(ex.GetAllMessages());
+                    }
+                }
+                else
+                {
+                    if (ex is KnownException)
+                    {
+                        this.Fail(ex.GetAllMessages());
+                    }
+                    else if (ex is DbEntityValidationException)
+                    {
+                        this.Fail("数据验证错误，请修改数据重试。");
+                    }
+                    else
+                    {
+                        this.Fail("服务器未知错误，请重试。如果该问题一直存在，请联系管理员。感谢您的支持。");
+                    }
+                }
             }
         }
 

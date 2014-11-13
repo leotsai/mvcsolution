@@ -56,7 +56,13 @@
     <Compile Include="Entities\Department.cs" />
     <Compile Include="Entities\DepartmentUserRL.cs" />
     <Compile Include="Entities\Setting.cs" />
+    <Compile Include="Entities\SettingMapping.cs" />
     <Compile Include="Entities\UserRoleRL.cs" />
+    <Compile Include="Mappings\DepartmentMapping.cs" />
+    <Compile Include="Mappings\DepartmentUserRLMapping.cs" />
+    <Compile Include="Mappings\Extensions\EntityTypeConfigurationExtensions.cs" />
+    <Compile Include="Mappings\RoleMapping.cs" />
+    <Compile Include="Mappings\UserMapping.cs" />
     <Compile Include="Mappings\UserRoleRLMapping.cs" />
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="EntityExtensions\EntityBaseExtensions.cs" />

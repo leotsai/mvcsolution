@@ -7,15 +7,8 @@ namespace MvcSolution.Data.Mappings
     {
         public UserRoleRLMapping()
         {
-            this.HasRequired(t => t.User)
-                .WithMany(x => x.UserRoleRls)
-                .HasForeignKey(t => t.UserId)
-                .WillCascadeOnDelete(false);
-
-            this.HasRequired(t => t.Role)
-                .WithMany(x => x.UserRoleRls)
-                .HasForeignKey(t => t.RoleId)
-                .WillCascadeOnDelete(false);
+            this.Require(x => x.User, x => x.UserRoleRls, x => x.UserId);
+            this.Require(x => x.Role, x => x.UserRoleRls, x => x.RoleId);
         }
     }
 }

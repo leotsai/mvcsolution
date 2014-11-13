@@ -1,0 +1,50 @@
+﻿#header {
+    position: relative;
+    background-color: #FDFFE5;
+    height: 100px;
+}
+#mainNav a{
+    display: inline-block;
+    line-height: 35px;
+    text-align: center;
+    padding: 0 25px;
+    color: #FC7937;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#mainNav a:hover {
+    background-color: rgba(255, 200, 200, 0.4);
+}
+#mainNav {
+    background-color: #F4E4B7;
+    border-top: 1px solid #D6C9A7;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+#logo {
+    position: absolute;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    top: 10px;
+    left: 10px;
+    display: block;
+    padding: 8px 15px;
+    background-color: rgba(200, 200, 200, 0.2);
+    border-radius: 5px;
+}
+.header-w1 {
+    position: relative;
+}
+#footer {
+    background-color: #E5C797;
+    border-top-color: #CCAF82;
+    color: inherit;
+}
+#loginStatus {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}

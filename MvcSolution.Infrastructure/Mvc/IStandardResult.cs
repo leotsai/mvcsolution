@@ -10,7 +10,6 @@ namespace MvcSolution.Infrastructure.Mvc
         void Fail();
         void Succeed(string message);
         void Fail(string message);
-        void Try(Action action);
     }
 
     public interface IStandardResult<T> : IStandardResult
