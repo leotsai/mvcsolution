@@ -105,6 +105,8 @@
     <Content Include="css\mvcsolution\admin\images\arrow-right-b.png" />
     <Content Include="css\mvcsolution\admin\images\bg-grid.png" />
     <Content Include="css\mvcsolution\admin\images\menu-more.png" />
+    <Content Include="css\mvcsolution\admin\images\modal.png" />
+    <Content Include="css\mvcsolution\admin\images\progressing.gif" />
     <Content Include="Global.asax" />
     <Content Include="js-source\admin\setting\index\01.page.js" />
     <Content Include="js-source\_core\00.mvcsolution.js" />
