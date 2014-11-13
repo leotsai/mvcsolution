@@ -8,18 +8,19 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4E7D44C5-0795-4A54-9BB7-30ED99B188F2}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvcSolution.Web.Main</RootNamespace>
     <AssemblyName>MvcSolution.Web.Main</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +30,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,61 +39,44 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\EF\EntityFramework.dll</HintPath>
+      <HintPath>..\_libs\EF\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\Libs\EF\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\Practices\Microsoft.Practices.Unity.dll</HintPath>
+      <HintPath>..\_libs\EF\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\Libs\Mvc4\System.Web.Optimization.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\Mvc\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\Mvc\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\Mvc\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\Mvc\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrapers\Bootstraper.cs" />
-    <Compile Include="Bootstrapers\IBootstraperTask.cs" />
-    <Compile Include="Bootstrapers\InitializeIocTask.cs" />
-    <Compile Include="Bootstrapers\RegisterRoutesTask.cs" />
-    <Compile Include="Bootstrapers\RegisterValidationAdaptersTask.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\AccountViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\busier\busier.css" />
@@ -101,7 +86,6 @@
     <Content Include="css\busier\images\modal-white.png" />
     <Content Include="css\busier\images\remove16.png" />
     <Content Include="css\busier\images\toast.png" />
-    <Content Include="css\core.css" />
     <Content Include="css\images\error.png" />
     <Content Include="css\jqueryui\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="css\jqueryui\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -117,30 +101,27 @@
     <Content Include="css\jqueryui\base\images\ui-icons_888888_256x240.png" />
     <Content Include="css\jqueryui\base\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="css\jqueryui\base\jquery-ui.css" />
-    <Content Include="css\main.css" />
+    <Content Include="css\mvcsolution\admin\core.css" />
+    <Content Include="css\mvcsolution\admin\images\arrow-right-b.png" />
+    <Content Include="css\mvcsolution\admin\images\bg-grid.png" />
+    <Content Include="css\mvcsolution\admin\images\menu-more.png" />
     <Content Include="Global.asax" />
+    <Content Include="js-source\admin\setting\index\01.page.js" />
+    <Content Include="js-source\_core\00.mvcsolution.js" />
+    <Content Include="js-source\_core\01.ajax.js" />
+    <Content Include="js-source\_core\01.busier.js" />
+    <Content Include="js-source\_core\01.jquery.extensions.js" />
+    <Content Include="js-source\_core\01.notification.js" />
+    <Content Include="js-source\_core\01.utils.js" />
     <Content Include="js\jquery\jquery-1.7.2.min.js" />
     <Content Include="js\jquery\jquery-ui-1.8.20.custom.min.js" />
     <Content Include="js\jquery\jquery.validate.min.js" />
     <Content Include="js\jquery\jquery.validate.unobtrusive.min.js" />
-    <Content Include="js\mvcsolution\core\00.infrastructure\arrayExtensions.js" />
-    <Content Include="js\mvcsolution\core\00.infrastructure\busier.js" />
-    <Content Include="js\mvcsolution\core\00.infrastructure\dateTimeExtensions.js" />
-    <Content Include="js\mvcsolution\core\00.infrastructure\guid.js" />
-    <Content Include="js\mvcsolution\core\00.infrastructure\page.js" />
-    <Content Include="js\mvcsolution\core\01.ajax\ajax.js" />
-    <Content Include="js\mvcsolution\core\02.notification\notification.js" />
-    <Content Include="js\mvcsolution\core\03.utils\utils.js" />
-    <Content Include="js\mvcsolution\core\09.document-ready\documentready.js" />
-    <Content Include="js\mvcsolution\core\mvcsolution.js" />
-    <Content Include="js\mvcsolution\pages\loggedin\user\edit\01.page.js" />
-    <Content Include="js\mvcsolution\pages\loggedin\user\index\01.page.js" />
-    <Content Include="js\mvcsolution\pages\public\user\register\01.page.js" />
-    <Content Include="js\_gen\mvcsolution.core.js" />
-    <Content Include="js\_gen\pages\loggedin\user\edit.js" />
-    <Content Include="js\_gen\pages\loggedin\user\index.js" />
-    <Content Include="js\_gen\pages\public\user\register.js" />
-    <Content Include="Web.config" />
+    <Content Include="js\mvcsolution.core.js" />
+    <Content Include="js\mvcsolution\admin\setting\index.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -148,32 +129,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="_grunt\Gruntfile.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\" />
-    <Folder Include="js\mvcsolution\libs\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MvcSolution.Data\MvcSolution.Data.csproj">
-      <Project>{27b930ae-4f92-4c8e-80dd-0acf98489b63}</Project>
-      <Name>MvcSolution.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
-      <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
-      <Name>MvcSolution.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvcSolution.Web.Admin\MvcSolution.Web.Admin.csproj">
-      <Project>{a4c960ad-2c79-447c-91b7-1d8c11c9b0f3}</Project>
-      <Name>MvcSolution.Web.Admin</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvcSolution.Web.Api\MvcSolution.Web.Api.csproj">
-      <Project>{87fc7d13-b97b-421a-9805-833fb193fe6f}</Project>
-      <Name>MvcSolution.Web.Api</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvcSolution.Web\MvcSolution.Web.csproj">
-      <Project>{695EA687-9255-4FD4-836B-AF83220C48AC}</Project>
-      <Name>MvcSolution.Web</Name>
-    </ProjectReference>
+    <Folder Include="css\mvcsolution\_images\" />
+    <Folder Include="js-source\public\" />
+    <Folder Include="js-source\_libs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Layout.cshtml" />
@@ -182,16 +143,59 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Error\Common.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Public\Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Areas\Public\Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Areas\Public\Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_grunt\debug.bat" />
+    <Content Include="_grunt\release.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Menu.cshtml" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcSolution.Data\MvcSolution.Data.csproj">
+      <Project>{27b930ae-4f92-4c8e-80dd-0acf98489b63}</Project>
+      <Name>MvcSolution.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
+      <Project>{6f3a11f2-85b8-4f63-945d-ae75e7014ec6}</Project>
+      <Name>MvcSolution.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSolution.Services\MvcSolution.Services.csproj">
+      <Project>{870adad6-b667-4583-bea0-9c126e117a77}</Project>
+      <Name>MvcSolution.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSolution.Web\MvcSolution.Web.csproj">
+      <Project>{957418C4-7AE4-463B-B25E-FC511C2855B0}</Project>
+      <Name>MvcSolution.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSolution._Areas\Admin\MvcSolution.Web.Admin\MvcSolution.Web.Admin.csproj">
+      <Project>{2f873e5a-cf69-4eeb-b7e5-36a8471c876f}</Project>
+      <Name>MvcSolution.Web.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSolution._Areas\Api\MvcSolution.Web.Api\MvcSolution.Web.Api.csproj">
+      <Project>{6c49f65f-11f6-4b56-91d3-56841e8d1714}</Project>
+      <Name>MvcSolution.Web.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSolution._Areas\Public\MvcSolution.Web.Public\MvcSolution.Web.Public.csproj">
+      <Project>{81ce0aec-2a13-45e0-a1dd-2c81eda11409}</Project>
+      <Name>MvcSolution.Web.Public</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Setting\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -212,6 +216,8 @@
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:13012/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:13012/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\_libs\EF\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\SettingService.cs" />
+    <Compile Include="ISettingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MvcSolution.Data\MvcSolution.Data.csproj">
+      <Project>{27b930ae-4f92-4c8e-80dd-0acf98489b63}</Project>
+      <Name>MvcSolution.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
+      <Project>{6f3a11f2-85b8-4f63-945d-ae75e7014ec6}</Project>
+      <Name>MvcSolution.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MvcSolution.Services\MvcSolution.Services.csproj">
+      <Project>{870adad6-b667-4583-bea0-9c126e117a77}</Project>
+      <Name>MvcSolution.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

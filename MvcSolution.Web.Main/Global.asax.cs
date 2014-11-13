@@ -1,4 +1,6 @@
-﻿using MvcSolution.Web.Main.Bootstrapers;
+﻿using System.Web.Mvc;
+using System.Web.Routing;
+using MvcSolution.Services;
 
 namespace MvcSolution.Web.Main
 {
@@ -6,7 +8,19 @@ namespace MvcSolution.Web.Main
     {
         protected override void OnApplicationStart()
         {
-            new Bootstraper().Run();
+            base.OnApplicationStart();
+            Ioc.RegisterInheritedTypes(typeof(ServiceBase).Assembly, typeof(ServiceBase));
+
+            SettingContext.Instance.Init();
+        }
+
+        protected override void RegisterRoutes(RouteCollection routes)
+        {
+            var defaults = new { controller = "home", action = "index", id = UrlParameter.Optional };
+            var ns = new[] { "MvcSolution.Web.Publics.Controllers.*" };
+
+            routes.Map("{controller}/{action}/{id}", defaults, ns);
+
         }
     }
 }

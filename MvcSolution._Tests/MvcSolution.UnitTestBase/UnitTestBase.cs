@@ -1,4 +1,4 @@
-﻿using MvcSolution.Web.Main.Bootstrapers;
+﻿
 using NUnit.Framework;
 
 namespace MvcSolution.UnitTestBase
@@ -9,7 +9,7 @@ namespace MvcSolution.UnitTestBase
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
         {
-            new Bootstraper().Run();
+            
         }
     }
 }

@@ -17,7 +17,6 @@ namespace MvcSolution.Data.Entities
         {
             public const string SuperAdmin = "Super Admin";
             public const string Manager = "Manager";
-
             public const string CustomerService = "Customer Service";
             public const string Sales = "Sales";
         }

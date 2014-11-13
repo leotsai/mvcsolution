@@ -34,7 +34,7 @@ DECLARE @i INT
 SELECT   @i=1  
 DECLARE @sSPID VARCHAR(100)
 DECLARE KILL_CUR SCROLL CURSOR FOR    
-SELECT SPID FROM sysprocesses WHERE DBID=DB_ID('MvcSolution')                           
+SELECT SPID FROM sysprocesses WHERE DBID=DB_ID('MvcSolutionDB')                           
 OPEN KILL_CUR                  
 IF @@CURSOR_ROWS=0 GOTO END_KILL_CUR  
 FETCH FIRST FROM KILL_CUR INTO @sSPID              

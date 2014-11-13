@@ -73,6 +73,7 @@
     <Compile Include="Captcha\Config.cs" />
     <Compile Include="Captcha\HtmlHelperExtensions.cs" />
     <Compile Include="Captcha\ImageBuilder.cs" />
+    <Compile Include="Extensions\AssemblyExtensions.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />

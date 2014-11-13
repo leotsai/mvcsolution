@@ -9,6 +9,16 @@ namespace MvcSolution
             return input.Equals(toCompare, comparison);
         }
 
+        public static int? ToInt32(this string str)
+        {
+            int value;
+            if (int.TryParse(str, out value))
+            {
+                return value;
+            }
+            return null;
+        }
+
         public static string ToWords(this string input)
         {
             if (string.IsNullOrEmpty(input))
