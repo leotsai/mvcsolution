@@ -11,6 +11,7 @@
 /MvcSolution._Areas/Public/MvcSolution.Web.Public/bin
 /MvcSolution._Tests/MvcSolution.UnitTestBase/bin
 /MvcSolution._Tests/MvcSolution.UnitTests.Services/bin
+/MvcSolution._Libs/MvcSolution.Libs.Statistics/bin
 /MvcSolution.Infrastructure/obj
 /MvcSolution.Data/obj
 /MvcSolution.Services/obj
@@ -24,6 +25,7 @@
 /MvcSolution._Areas/Public/MvcSolution.Web.Public/obj
 /MvcSolution._Tests/MvcSolution.UnitTestBase/obj
 /MvcSolution._Tests/MvcSolution.UnitTests.Services/obj
+/MvcSolution._Libs/MvcSolution.Libs.Statistics/obj
 *.DotSettings
 *.user
 *.suo
