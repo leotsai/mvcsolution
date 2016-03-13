@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MvcSolution.Infrastructure.Mvc
+﻿namespace MvcSolution
 {
     public interface IStandardResult
     {

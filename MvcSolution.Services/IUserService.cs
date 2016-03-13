@@ -1,14 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using MvcSolution.Data.Entities;
+using MvcSolution.Data;
 
 namespace MvcSolution.Services
 {
     public interface IUserService
     {
-        User Get(string username);
-        bool CanLogin(string username, string password);
-        SessionUser GetSessionUser(string username);
+        SessionUser GetSessionUser(Guid userId);
+        void Login(string username, string password);
         User Get(Guid id);
+        User Get(string username);
+        void Register(string username, string password, bool registerAsAdmin);
+        void CompleteRegistration(Guid userId, User user);
     }
 }

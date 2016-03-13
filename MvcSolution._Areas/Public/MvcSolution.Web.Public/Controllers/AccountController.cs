@@ -1,58 +1,97 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 using System.Web.Security;
-using MvcSolution.Data.Entities;
-using MvcSolution.Infrastructure.Mvc;
-using MvcSolution.Web.Public.ViewModels;
+using MvcSolution.Data;
+using MvcSolution.Services;
+using MvcSolution.Web.Security;
+using MvcSolution.Web.ViewModels;
 
 namespace MvcSolution.Web.Public.Controllers
 {
     public class AccountController : PublicControllerBase
     {
-        public ActionResult Login()
-        {
-            var model = new AccountLoginViewModel();
-            return AreaView("account/login.cshtml", model);
-        }
-
         public ActionResult Register()
         {
-            var model = new RegisterViewModel();
-            return AreaView("account/register.cshtml", model);
+            var model = new LayoutViewModel();
+            return AreaView("account/registerStep1.cshtml", model);
         }
 
-        [HttpPost]
-        public ActionResult Login(AccountLoginViewModel model)
+        public ActionResult Login(string returnUrl)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            var service = Ioc.GetService<Services.IUserService>();
-            if (service.CanLogin(model.Username, model.Password))
-            {
-                Response.SetAuthCookie(model.Username, model.RememberMe);
-                GetSession().Login(model.Username);
-                return Redirect("/");
-            }
-            model.Error = "invalid username/password.";
+            var model = new LayoutViewModel<string>();
+            model.Model = returnUrl;
             return AreaView("account/login.cshtml", model);
-        }
-
-        [HttpPost]
-        public StandardJsonResult Register(User user)
-        {
-            var result = new StandardJsonResult();
-            result.Try(() => Ioc.GetService<Services.Public.IUserService>().Register(user));
-            return result;
         }
 
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             GetSession().Logout();
-            Session.Clear();
             Session.Abandon();
-            return RedirectToAction("Login");
+            return Redirect("/login");
+        }
+
+        [HttpPost]
+        public StandardJsonResult Login(string username, string password)
+        {
+            return base.Try(() =>
+            {
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                {
+                    throw new KnownException("Please enter username and password");
+                }
+                var service = Ioc.Get<IUserService>();
+                service.Login(username, password);
+                var user = service.Get(username);
+                base.LoginUser(user.Id);
+            });
+        }
+
+        [MvcAuthorize]
+        public ActionResult RegisterCompleted()
+        {
+            var model = new LayoutViewModel<User>();
+            var service = Ioc.Get<IUserService>();
+            model.Model = service.Get(GetUserId());
+            return AreaView("account/RegisterStep2.cshtml", model);
+        }
+
+        [HttpPost]
+        public StandardJsonResult Register(string username, string password, bool? registerAsAdmin)
+        {
+            return base.Try(() =>
+            {
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                {
+                    throw new KnownException("Please enter username and password");
+                }
+                if (username.IsEmail() == false)
+                {
+                    throw new KnownException("The userame field should an email address");
+                }
+                var service = Ioc.Get<IUserService>();
+                service.Register(username, password, registerAsAdmin ?? false);
+                var user = service.Get(username);
+                base.LoginUser(user.Id);
+            });
+        }
+
+        [HttpPost]
+        public StandardJsonResult CompleteRegistration(User user)
+        {
+            return base.Try(() =>
+            {
+                if (string.IsNullOrWhiteSpace(user.NickName))
+                {
+                    throw new KnownException("nickname is required");
+                }
+                var service = Ioc.Get<IUserService>();
+                service.CompleteRegistration(GetUserId(), user);
+            });
         }
     }
 }

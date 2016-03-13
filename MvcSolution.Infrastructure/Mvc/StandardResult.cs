@@ -1,9 +1,4 @@
-﻿using System;
-using System.Data.Entity.Validation;
-using System.Linq;
-using System.Web;
-
-namespace MvcSolution.Infrastructure.Mvc
+﻿namespace MvcSolution
 {
     public class StandardResult : IStandardResult
     {

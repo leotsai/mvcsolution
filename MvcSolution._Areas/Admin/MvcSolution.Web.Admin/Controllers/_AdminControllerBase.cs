@@ -1,15 +1,12 @@
-﻿using System.Web.Mvc;
-using MvcSolution.Data.Entities;
+﻿using MvcSolution.Data;
 using MvcSolution.Web.Controllers;
+using MvcSolution.Web.Security;
 
 namespace MvcSolution.Web.Admin.Controllers
 {
-    [Authorize(Roles = Role.Names.SuperAdmin)]
-    public abstract class AdminControllerBase : MvcSolutionControllerBase
+    [MvcAuthorize(Role.Names.SuperAdmin)]
+    public class AdminControllerBase : MvcSolutionControllerBase
     {
-        protected override string AreaName
-        {
-            get { return AdminAreaRegistration.Name; }
-        }
+        protected override string AreaName => "admin";
     }
 }

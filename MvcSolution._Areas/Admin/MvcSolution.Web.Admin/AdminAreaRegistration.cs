@@ -5,25 +5,16 @@ namespace MvcSolution.Web.Admin
 {
     public class AdminAreaRegistration : AreaRegistration
     {
-        public const string Name = "Admin";
-
-        public override string AreaName
-        {
-            get { return Name; }
-        }
+        public override string AreaName => "Admin";
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            RegisterIoc();
+            Ioc.RegisterInheritedTypes(typeof(Services.Admin.IUserService).Assembly, typeof(ServiceBase));
+
             var ns = new[] { "MvcSolution.Web.Admin.Controllers.*" };
-            var defaults = new {controller = "home", action = "index", id = UrlParameter.Optional};
 
-            context.Map("admin/{controller}/{action}/{id}", defaults, ns);
-        }
-
-        public static void RegisterIoc()
-        {
-            Ioc.RegisterInheritedTypes(typeof (Services.Admin.ISettingService).Assembly, typeof (ServiceBase));
+            context.Map("admin", "user", "index", ns);
+            context.Map("admin/{controller}/{action}/{id}", new { controller = "home", action = "index", id = UrlParameter.Optional }, ns);
         }
     }
 }

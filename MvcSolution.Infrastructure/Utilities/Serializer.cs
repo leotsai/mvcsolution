@@ -1,10 +1,11 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace MvcSolution.Infrastructure
+namespace MvcSolution
 {
     public static class Serializer
     {
@@ -25,9 +26,22 @@ namespace MvcSolution.Infrastructure
             return JsonConvert.DeserializeObject<T>(json);
         }
 
+        public static T TryFromJson<T>(string json) where T : class, new()
+        {
+            try
+            {
+                var value = JsonConvert.DeserializeObject<T>(json);
+                return value ?? new T();
+            }
+            catch (Exception)
+            {
+                return new T();
+            }
+        }
+
         public static string ToXml<T>(T obj)
         {
-            var serializer = new XmlSerializer(typeof (T));
+            var serializer = new XmlSerializer(typeof(T));
             using (var stream = new MemoryStream())
             {
                 serializer.Serialize(stream, obj);

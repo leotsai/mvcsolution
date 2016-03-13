@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C61C2105-E419-4E43-8548-4B18194D9718}</ProjectGuid>
+    <ProjectGuid>{E8317F20-DFC3-4990-94A7-A5F728FB04EE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvcSolution.Services.Public</RootNamespace>
@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\..\_libs\EF\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_libs\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,22 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementations\UserService.cs" />
+    <Compile Include="IAccountService.cs" />
+    <Compile Include="Implementations\AccountService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\MvcSolution.Data\MvcSolution.Data.csproj">
-      <Project>{27b930ae-4f92-4c8e-80dd-0acf98489b63}</Project>
+      <Project>{cd0718d0-4a31-4034-8e86-1c538a2ff0ad}</Project>
       <Name>MvcSolution.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
-      <Project>{6f3a11f2-85b8-4f63-945d-ae75e7014ec6}</Project>
+      <Project>{3593818e-2b60-41a8-b5ba-de479b6a5d51}</Project>
       <Name>MvcSolution.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\MvcSolution.Services\MvcSolution.Services.csproj">
-      <Project>{870adad6-b667-4583-bea0-9c126e117a77}</Project>
+      <Project>{81a7247f-f729-49b4-ab99-1b0ab09fb56e}</Project>
       <Name>MvcSolution.Services</Name>
     </ProjectReference>
   </ItemGroup>

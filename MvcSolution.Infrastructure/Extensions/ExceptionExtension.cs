@@ -5,14 +5,14 @@ namespace MvcSolution
 {
     public static class ExceptionExtension
     {
-        public static string GetAllMessages(this Exception ex)
+        public static string GetAllMessages(this Exception exception)
         {
-            var exception = ex;
+            var ex = exception;
             var sb = new StringBuilder();
-            while (exception != null)
+            while (ex != null)
             {
-                sb.AppendLine(exception.Message);
-                exception = exception.InnerException;
+                sb.AppendLine(ex.Message);
+                ex = ex.InnerException;
             }
             return sb.ToString();
         }

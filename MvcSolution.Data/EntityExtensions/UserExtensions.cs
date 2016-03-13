@@ -1,55 +1,39 @@
 ﻿using System;
 using System.Linq;
-using MvcSolution.Data.Entities;
+using MvcSolution.Data;
 
 namespace MvcSolution
 {
     public static class UserExtensions
     {
-        public static User Get(this IQueryable<User> query, string username)
+        public static IQueryable<User> WhereByKeyword(this IQueryable<User> query, string keyword)
         {
-            return query.FirstOrDefault(x => x.Username == username);
-        }
-
-        public static IQueryable<User> WhereByDepartment(this IQueryable<User> query, Guid? departmentId)
-        {
-            if (departmentId == null)
+            if (string.IsNullOrWhiteSpace(keyword))
             {
                 return query;
             }
             return from a in query
-                   where a.DepartmentId == departmentId.Value
-                   select a;
+                where a.NickName.Contains(keyword)
+                      || a.Username.Contains(keyword)
+                      || a.InternalNotes.Contains(keyword)
+                select a;
         }
 
-        public static IQueryable<User> WhereByRole(this IQueryable<User> query, string role)
+        public static IQueryable<User> WhereByTagId(this IQueryable<User> query, Guid? tagId)
         {
-            if (string.IsNullOrEmpty(role))
+            if (tagId == null)
             {
                 return query;
             }
             return from a in query
-                   from b in a.UserRoleRls
-                   where b.Role.Name == role
+                   from rl in a.UserTagRLs
+                   where rl.TagId == tagId
                    select a;
         }
-
-        public static IQueryable<User> WhereByName(this IQueryable<User> query, string name)
+        
+        public static string GetNickName(this IQueryable<User> query, Guid userId)
         {
-            if (string.IsNullOrEmpty(name))
-            {
-                return query;
-            }
-            return query.Where(x => x.Name.Contains(name));
-        }
-
-        public static bool Duplicates(this IQueryable<User> query, Guid? oldUserId, string username)
-        {
-            if (oldUserId == null)
-            {
-                return query.Any(x => x.Username == username);
-            }
-            return query.Any(x => x.Id != oldUserId && x.Username == username);
+            return query.Where(x => x.Id == userId).Select(x => x.NickName).FirstOrDefault();
         }
     }
 }

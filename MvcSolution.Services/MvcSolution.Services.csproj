@@ -1,22 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{870ADAD6-B667-4583-BEA0-9C126E117A77}</ProjectGuid>
+    <ProjectGuid>{81A7247F-F729-49B4-AB99-1B0AB09FB56E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvcSolution.Services</RootNamespace>
     <AssemblyName>MvcSolution.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,46 +28,47 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\_libs\EF\EntityFramework.dll</HintPath>
+      <HintPath>..\_libs\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\ImageDataDto.cs" />
+    <Compile Include="Dtos\SessionUser.cs" />
+    <Compile Include="IImageService.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Implementations\ImageService.cs" />
     <Compile Include="Implementations\SettingService.cs" />
+    <Compile Include="Implementations\UserService.cs" />
     <Compile Include="ISettingService.cs" />
+    <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBase.cs" />
-    <Compile Include="Implementations\DepartmentService.cs" />
-    <Compile Include="Dtos\ManageUserListDto.cs" />
-    <Compile Include="Dtos\SessionUser.cs" />
-    <Compile Include="IDepartmentService.cs" />
-    <Compile Include="IRoleService.cs" />
-    <Compile Include="IUserService.cs" />
-    <Compile Include="Implementations\RoleService.cs" />
-    <Compile Include="Implementations\UserService.cs" />
-    <Compile Include="SettingContext.cs" />
+    <Compile Include="Settings\SettingContext.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MvcSolution.Data\MvcSolution.Data.csproj">
-      <Project>{27B930AE-4F92-4C8E-80DD-0ACF98489B63}</Project>
+      <Project>{cd0718d0-4a31-4034-8e86-1c538a2ff0ad}</Project>
       <Name>MvcSolution.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\MvcSolution.Infrastructure\MvcSolution.Infrastructure.csproj">
-      <Project>{6F3A11F2-85B8-4F63-945D-AE75E7014EC6}</Project>
+      <Project>{3593818e-2b60-41a8-b5ba-de479b6a5d51}</Project>
       <Name>MvcSolution.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Xxx.Libs.Weixin\Xxx.Libs.Weixin.csproj">
+      <Project>{456dd0ad-7dc4-4703-b6d4-87acb6897f41}</Project>
+      <Name>Xxx.Libs.Weixin</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
-﻿namespace MvcSolution.Data.Entities
+﻿
+namespace MvcSolution.Data
 {
     public class Setting : EntityBase
     {

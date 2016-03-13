@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using MvcSolution.Data.Entities;
+using MvcSolution.Data;
 
 namespace MvcSolution.Data.Mappings
 {
@@ -8,7 +8,6 @@ namespace MvcSolution.Data.Mappings
         public RoleMapping()
         {
             this.Property(x => x.Name).IsRequired().HasMaxLength(50);
-            this.Property(x => x.Description).HasMaxLength(200);
         }
     }
 }

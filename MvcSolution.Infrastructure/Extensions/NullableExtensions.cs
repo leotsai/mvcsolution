@@ -9,7 +9,7 @@
 
         public static T To<T>(this T? value, T defaultValue) where T : struct
         {
-            return value.HasValue ? value.Value : defaultValue;
+            return value ?? defaultValue;
         }
     }
 }

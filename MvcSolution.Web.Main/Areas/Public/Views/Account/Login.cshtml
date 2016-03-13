@@ -1,34 +1,39 @@
-﻿@model AccountLoginViewModel
-
-
-<h1>Login</h1>
-@using (Html.BeginForm("login", "Account", FormMethod.Post, new{@class="form-s"}))
-{
-    if (!string.IsNullOrEmpty(Model.Error))
-     {
-         <div class="group error">
-             @Model.Error
-         </div>
-     }
-    <div class="group">
-        <label>Username: </label>
-        @Html.TextBoxFor(x=>x.Username)
-        @Html.ValidationMessageFor(x=>x.Username)
-    </div>
-    <div class="group">
-        <label>Password: </label>
-        @Html.PasswordFor(x=>x.Password)
-        @Html.ValidationMessageFor(x=>x.Password)
-    </div>
-    <div class="group">
-        <label></label>
-        <div class="field">
-            <input type="checkbox" value="true" id="cbRemember" name="RememberMe"/>
-            <label for="cbRemember" class="for">remember me for 30 days</label>
-        </div>
-    </div>
-    <div class="group">
-        <label></label>
-        <input type="submit" class="btn" value="Login"/>
-    </div>
+﻿@model LayoutViewModel<string>
+@{
+    Model.Title = "Login";
 }
+<script src="~/Areas/Public/js/account/login.js"></script>
+<input type="hidden" id="hfReturnUrl" value="@Model.Model"/>
+<div class="panel">
+    <div class="panel-title">
+        @Model.Title
+    </div>
+    <div class="panel-content">
+        <form id="formLogin" method="POST">
+            <table class="form">
+                <colgroup>
+                    <col width="120px"/>
+                    <col width="auto" />
+                </colgroup>
+                <tr>
+                    <td class="label">Username：</td>
+                    <td>
+                        <input type="text" class="txt" name="username" placeholder="your email address"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Password：</td>
+                    <td>
+                        <input type="password" id="txtPassword" class="txt" name="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td>
+                        <a href="javascript:;" id="btnLogin" class="btn">Login</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>    
+</div>

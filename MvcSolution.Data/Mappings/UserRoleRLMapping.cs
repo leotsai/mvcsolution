@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using MvcSolution.Data.Entities;
+using MvcSolution.Data;
 
 namespace MvcSolution.Data.Mappings
 {
@@ -7,8 +7,8 @@ namespace MvcSolution.Data.Mappings
     {
         public UserRoleRLMapping()
         {
-            this.Require(x => x.User, x => x.UserRoleRls, x => x.UserId);
-            this.Require(x => x.Role, x => x.UserRoleRls, x => x.RoleId);
+            this.Require(x => x.User, x => x.UserRoleRLs, x => x.UserId);
+            this.Require(x => x.Role, x => x.UserRoleRLs, x => x.RoleId);
         }
     }
 }

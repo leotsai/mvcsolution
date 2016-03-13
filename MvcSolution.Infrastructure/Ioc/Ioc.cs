@@ -13,17 +13,17 @@ namespace MvcSolution
             _container = new UnityContainer();
         }
 
-        public static void Register<TInterface, TImpmentation>() where TImpmentation : TInterface
-        {
-            _container.RegisterType<TInterface, TImpmentation>();
-        }
-
         public static void RegisterInheritedTypes(Assembly assembly, Type baseType)
         {
             _container.RegisterInheritedTypes(assembly, baseType);
         }
 
-        public static T GetService<T>()
+        public static void Register<TInterface, TImplementation>() where TImplementation : TInterface
+        {
+            _container.RegisterType<TInterface, TImplementation>();
+        }
+
+        public static T Get<T>()
         {
             return _container.Resolve<T>();
         }

@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
+using MvcSolution;
 
-namespace MvcSolution.Data.Entities
+namespace MvcSolution.Data
 {
-    public class Role : EntityBase
+    public class Role : EntityBase, ISimpleEntity
     {
         public string Name { get; set; }
-        public string Description { get; set; }
 
-        public virtual ICollection<UserRoleRL> UserRoleRls { get; set; }
+        public virtual ICollection<UserRoleRL> UserRoleRLs { get; set; } 
 
         public class Names
         {
-            public const string SuperAdmin = "Super Admin";
-            public const string Manager = "Manager";
-            public const string CustomerService = "Customer Service";
-            public const string Sales = "Sales";
+            public const string SuperAdmin = "SuperAdmin";
+            public const string SaleAgent = "SaleAgent";
+            public const string Dealer = "Dealer";
+            public const string Customer = "Customer";
         }
     }
 }

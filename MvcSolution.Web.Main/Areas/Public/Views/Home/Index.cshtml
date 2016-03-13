@@ -1,15 +1,50 @@
 ﻿@model LayoutViewModel
+@{
+    Model.Title = "MvcSolution.com - complete code architecture for ASP.NET MVC projects";
+}
 
-<h1>MvcSolution Home</h1>
-<p>
-    <strong>Source Code: </strong>
-    <a href="https://github.com/leotsai/mvcsolution">https://github.com/leotsai/mvcsolution</a>
-</p>
-<h3>The register feature is implemented.</h3>
-<p>
-    <a class="btn" href="/register">Register</a>
-</p>
-<h3>The login feature is implemented.</h3>
-<p>
-    <a class="btn" href="/login">Login</a>
-</p>
+<div class="panel">
+    <div class="panel-title">
+        About MvcSolution.com
+    </div>
+    <div class="panel-content">
+        <p>
+            This website is a demo for the source code on <a href="https://github.com/leotsai/mvcsolution" target="_blank">https://github.com/leotsai/mvcsolution</a>.
+            You can download the source code and run it in Visual Studio then you shoudld see the same website.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            As it's just a demo, you can access to any features even the admin area by free register.
+        </p>
+        <p>&nbsp;</p>
+        <p>So, feel free to use this website. </p>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-title">
+        About https://github.com/leotsai/mvcsolution
+    </div>
+    <div class="panel-content">
+        <p>
+            The source code on github there shows a common solution architecture for ASP.NET MVC websites.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            I tried to write the minimum code to demonstrate the architecture, so you will find it's quite light weight.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            Actually the source code is not for copy-and-use. It's more like a reference to the documentation.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            The documentation should be much more useful than the source code if you carefully read it.
+        </p>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+    $(document).ready(function() {
+        $("#navHome").addClass("selected");
+    });
+</script>

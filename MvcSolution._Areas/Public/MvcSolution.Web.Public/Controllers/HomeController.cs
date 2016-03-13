@@ -7,8 +7,22 @@ namespace MvcSolution.Web.Public.Controllers
     {
         public ActionResult Index()
         {
-            var model = new LayoutViewModel();
-            return AreaView("home/index.cshtml", model);
+            return AreaView("home/index.cshtml", new LayoutViewModel());
+        }
+
+        public ActionResult Doc()
+        {
+            return AreaView("home/Doc.cshtml", new LayoutViewModel());
+        }
+
+        public ActionResult Source()
+        {
+            return AreaView("home/Source.cshtml", new LayoutViewModel());
+        }
+
+        public ActionResult Contact()
+        {
+            return AreaView("home/Contact.cshtml", new LayoutViewModel());
         }
     }
 }

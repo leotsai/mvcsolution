@@ -1,1 +1,1 @@
-grunt release
+grunt release --force

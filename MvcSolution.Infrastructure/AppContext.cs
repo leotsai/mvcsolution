@@ -1,50 +1,39 @@
 ﻿using System;
 using System.Configuration;
-using System.Linq;
 
 namespace MvcSolution
 {
     public class AppContext
     {
-        private static readonly bool _isTestServer = false;
-        private static readonly string _host;
-        private static readonly string _winserviceDllFolder;
-
-        public static bool IsTestServer
-        {
-            get { return _isTestServer; }
-        }
-
-        public static string WinServiceDLLFolder
-        {
-            get { return _winserviceDllFolder; }
-        }
-
         /// <summary>
-        /// http://192.168.1.111
+        /// D:\wwws\www.MvcSolution.com
         /// </summary>
-        public static string Host
-        {
-            get { return _host; }
-        }
+        public static string RootFolder { get; }
+
+        
 
         static AppContext()
         {
-            var serverRoles = ConfigurationManager.AppSettings["ServerRoles"];
-            if (!string.IsNullOrEmpty(serverRoles))
-            {
-                var roles = serverRoles.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                if (roles.Contains("TestServer"))
-                {
-                    _isTestServer = true;
-                }
-            }
-            _host = ConfigurationManager.AppSettings["Host"];
-            if (string.IsNullOrEmpty(_host))
-            {
-                _host = "http://192.168.1.111:10020";
-            }
-            _winserviceDllFolder = ConfigurationManager.AppSettings["WinServiceDLLFolder"];
+            RootFolder = ConfigurationManager.AppSettings["RootFolder"];
+        }
+
+        public const int LoginExpireDays = 365;
+        public const string Md5Key = "MvcSolution";
+
+        /// <summary>
+        /// returns /_storage/image originals/{userid}/{year}-{month}/
+        /// </summary>
+        public static string GetImageOriginalFolder(Guid? userId)
+        {
+            return $"/_storage/image originals/{(userId == null ? "_system" : userId.ToString())}/{DateTime.Now.Year}-{DateTime.Now.Month}/";
+        }
+
+        /// <summary>
+        /// returns /_storage/image sized/{year}-{month}/{imageId}/
+        /// </summary>
+        public static string GetSizedImageFolder(Guid imageId)
+        {
+            return $"/_storage/image sized/{DateTime.Now.Year}-{DateTime.Now.Month}/{imageId}/";
         }
     }
 }

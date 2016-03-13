@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvcSolution.Data.Entities
+namespace MvcSolution.Data
 {
     public class UserRoleRL : EntityBase
     {

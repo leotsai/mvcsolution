@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace MvcSolution
 {
@@ -6,7 +7,25 @@ namespace MvcSolution
     {
         public static bool Eq(this string input, string toCompare, StringComparison comparison = StringComparison.OrdinalIgnoreCase)
         {
+            if (input == null)
+            {
+                return toCompare == null;
+            }
             return input.Equals(toCompare, comparison);
+        }
+        
+        public static Guid? ToGuid(this string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return null;
+            }
+            Guid id;
+            if (Guid.TryParse(str, out id))
+            {
+                return id;
+            }
+            return null;
         }
 
         public static int? ToInt32(this string str)
@@ -18,25 +37,11 @@ namespace MvcSolution
             }
             return null;
         }
-
-        public static string ToWords(this string input)
+        
+        public static bool IsEmail(this string value)
         {
-            if (string.IsNullOrEmpty(input))
-            {
-                return input;
-            }
-            var chars = input.ToCharArray();
-            var result = string.Empty;
-            foreach (var c in chars)
-            {
-                var str = c.ToString();
-                if (str == str.ToUpper())
-                {
-                    result += " ";
-                }
-                result += str;
-            }
-            return result;
+            var reg = new Regex(@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+            return string.IsNullOrEmpty(value) == false && reg.IsMatch(value);
         }
     }
 }

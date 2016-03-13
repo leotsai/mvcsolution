@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using MvcSolution.Data.Entities;
+using MvcSolution.Data;
 
 namespace MvcSolution.Data.Mappings
 {
@@ -7,11 +7,14 @@ namespace MvcSolution.Data.Mappings
     {
         public UserMapping()
         {
-            this.Property(x => x.Username).IsRequired().HasMaxLength(250);
-            this.Property(x => x.Name).HasMaxLength(100);
-            this.Property(x => x.Password).IsRequired().HasMaxLength(250);
-
-            this.Optional(x => x.Department, x => x.Users, x => x.DepartmentId);
+            this.Property(x => x.Username).HasMaxLength(250);
+            this.Property(x => x.Password).HasMaxLength(200);
+            this.Property(x => x.NickName).HasMaxLength(200);
+            this.Property(x => x.ImageKey).HasMaxLength(250);
+            this.Property(x => x.Signature).HasMaxLength(250);
+            this.Property(x => x.InternalNotes).HasMaxLength(250);
+            this.Property(x => x.RegisterIp).HasMaxLength(20);
+            this.Property(x => x.RegisterAddress).HasMaxLength(250);
         }
     }
 }

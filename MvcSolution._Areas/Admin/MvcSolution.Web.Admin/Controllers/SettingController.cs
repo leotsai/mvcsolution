@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using MvcSolution.Infrastructure.Mvc;
 using MvcSolution.Services;
 using MvcSolution.Web.Admin.ViewModels;
 
@@ -19,8 +18,9 @@ namespace MvcSolution.Web.Admin.Controllers
             var result = new StandardJsonResult();
             result.Try(() =>
             {
-                var service = Ioc.GetService<Services.Admin.ISettingService>();
+                var service = Ioc.Get<ISettingService>();
                 service.Update(key, value);
+                SettingContext.Instance.Refresh();
             });
             return result;
         }

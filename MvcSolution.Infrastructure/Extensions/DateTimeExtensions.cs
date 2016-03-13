@@ -4,47 +4,53 @@ namespace MvcSolution
 {
     public static class DateTimeExtensions
     {
-        public static DateTime ToDate(this DateTime dateTime, int year, int month, int date)
+        /// <summary>
+        /// yyyy/MM/dd HH:mm
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static string ToFullTimeString(this DateTime dateTime)
         {
-            return new DateTime(year, month, date, dateTime.Hour, dateTime.Minute, dateTime.Second);
+            return dateTime.ToString("yyyy/MM/dd HH:mm");
         }
 
-        public static bool TimeEquals(this DateTime time, DateTime toCompare)
-        {
-            return time.Hour == toCompare.Hour && time.Minute == toCompare.Minute;
-        }
-
-        public static string ToStr(this DateTime? dateTime)
-        {
-            if (dateTime == null)
-            {
-                return string.Empty;
-            }
-            return dateTime.Value.ToString();
-        }
-
-        public static string ToStr(this DateTime? dateTime, string format)
+        /// <summary>
+        /// yyyy/MM/dd HH:mm
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static string ToFullTimeString(this DateTime? dateTime)
         {
             if (dateTime == null)
             {
                 return string.Empty;
             }
-            return dateTime.Value.ToString(format);
+            return dateTime.Value.ToFullTimeString();
         }
 
-
-        public static string ToFullStr(this DateTime? dateTime)
+        /// <summary>
+        /// HH:mm
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static string ToTimeString(this DateTime dateTime)
         {
-            if (dateTime == null)
+            return dateTime.ToString("HH:mm");
+        }
+
+        public static bool IsWeekend(this DateTime date)
+        {
+            return date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday;
+        }
+        
+        public static DateTime ToSunday(this DateTime date)
+        {
+            if (date.DayOfWeek == DayOfWeek.Sunday)
             {
-                return string.Empty;
+                return date.Date;
             }
-            return dateTime.Value.ToString("yyyy/M/d HH:mm:ss");
+            return date.Date.AddDays(7 - (int) date.DayOfWeek);
         }
-
-        public static string ToFullStr(this DateTime dateTime)
-        {
-            return dateTime.ToString("yyyy/M/d HH:mm:ss");
-        }
+        
     }
 }

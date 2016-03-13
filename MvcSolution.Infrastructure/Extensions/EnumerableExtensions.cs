@@ -27,7 +27,7 @@ namespace MvcSolution
             var items = new List<SelectListItem>();
             if (optionalText != null)
             {
-                items.Add(new SelectListItem() {Text = optionalText, Value = string.Empty});
+                items.Add(new SelectListItem() { Text = optionalText, Value = string.Empty });
             }
             if (source == null)
             {
@@ -86,6 +86,24 @@ namespace MvcSolution
                 }
             }
             return results;
+        }
+
+        public static void SelectByValue(this List<SelectListItem> list, string value)
+        {
+            foreach (var item in list)
+            {
+                item.Selected = item.Value == value;
+            }
+        }
+
+        public static void Add(this List<SelectListItem> list, object text, object value, bool selected)
+        {
+            list.Add(new SelectListItem()
+            {
+                Text = text.ToString(),
+                Value = value.ToString(),
+                Selected = selected
+            });
         }
     }
 }

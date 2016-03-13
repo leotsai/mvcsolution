@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MvcSolution.Data.Entities;
-using MvcSolution.Infrastructure;
+using MvcSolution.Data;
 
 namespace MvcSolution
 {
-    public static class BusinessBaseExtensions
+    public static class EntityBaseExtensions
     {
         public static T Get<T>(this IQueryable<T> query, Guid id) where T : EntityBase
         {
@@ -18,18 +17,16 @@ namespace MvcSolution
             return query.Where(x => ids.Contains(x.Id));
         }
 
-        public static IQueryable<SimpleEntity> ToSimpleEntities<T>(this IQueryable<T> query) where T : EntityBase, ISimpleEntity
-        {
-            return query.Select(x => new SimpleEntity()
-            {
-                Id = x.Id,
-                Name = x.Name
-            });
-        }
 
-        public static IQueryable<SimpleEntity> OrderByName(this IQueryable<SimpleEntity> query)
+        public static IQueryable<SimpleEntity> ToSimpleEntities<T>(this IQueryable<T> query)
+            where T : EntityBase, ISimpleEntity
         {
-            return query.OrderBy(x => x.Name);
-        } 
+            return from a in query
+                   select new SimpleEntity()
+                   {
+                       Id = a.Id,
+                       Name = a.Name
+                   };
+        }
     }
 }
