@@ -1,0 +1,53 @@
+﻿@model LayoutViewModel
+@{
+    Model.Title = "Register";
+}
+<script src="~/Areas/Public/js/account/register-step1.js"></script>
+<link href="~/Areas/Public/css/pages/account-register-step1.css" rel="stylesheet" />
+<div class="panel">
+    <div class="panel-title">
+        @Model.Title
+    </div>
+    <div class="panel-content">
+        <form id="formRegister" method="POST">
+            <table class="form">
+                <colgroup>
+                    <col width="120px"/>
+                    <col width="auto" />
+                </colgroup>
+                <tr>
+                    <td class="label">Username：</td>
+                    <td>
+                        <input type="text" class="txt" id="txtUsername" name="username" placeholder="your email address"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Password：</td>
+                    <td>
+                        <input type="password" class="txt" name="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" id="cbAdmin" value="true" name="registerAsAdmin" checked="checked" />
+                        <label for="cbAdmin">Register as syetem admin</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" id="cbAgree" checked="checked"/>
+                        <label for="cbAgree">I agree to the <a href="javascript:;">Agreement</a></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td>
+                        <a href="javascript:;" id="btnRegister" class="btn">Submit</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>    
+</div>

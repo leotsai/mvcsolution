@@ -1,0 +1,29 @@
+﻿@model PageResult<UserDto>
+@{
+    var i = 0;
+}
+@foreach (var item in Model.Value)
+{
+    i++;
+    <tr data-id="@item.Id" class="@(i%2 == 0 ? "alt" : string.Empty)">
+        <td class="center cell-avartar">
+            <img title="click to view big size" src="@ImageHelper.BuildSrc(item.ImageKey, ImageSize.S50X50)" />
+        </td>
+        <td class="center">@item.Username</td>
+        <td>@item.InternalNotes</td>
+        <td class="center">@string.Join(", ", item.Tags)</td>
+        <td class="center">@item.LastLoginTime.ToFullTimeString()</td>
+        <td class="center">@item.CreatedTime.ToFullTimeString()</td>
+        <td class="center">@item.RegisterAddress</td>
+        <td class="center">
+            <a class="btn-edit" href="javascript:;">edit</a>
+        </td>
+    </tr>
+}
+@if (Model.Value.Count == 0)
+{
+    <tr>
+        <td class="empty" colspan="8">no data found</td>
+    </tr>
+}
+@Html.PagerInfo(Model)

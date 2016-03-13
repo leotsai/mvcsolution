@@ -1,0 +1,1 @@
+alter table [dbo].[Accounts] add [LatestDate] datetime null;

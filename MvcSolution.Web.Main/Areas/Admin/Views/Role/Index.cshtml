@@ -1,0 +1,54 @@
+﻿@model RoleIndexViewModel
+@{
+    Model.Title = "Manage System Managers(With Special Roles)";
+}
+<script src="~/Areas/Admin/js/role/index.js"></script>
+<link href="~/Areas/Admin/css/image-viewer.css" rel="stylesheet" />
+<link href="~/Areas/Admin/css/pages/role-index.css" rel="stylesheet" />
+<div class="panel">
+    <div class="panel-title">
+        @Model.Title
+        <div class="btns-right">
+            <a class="btn" href="javascript:void(0);" id="btnAdd">Add</a>
+        </div>
+    </div>
+    <div class="panel-content">
+        <form id="formSearch" method="POST" >
+            Keyword：
+            <input type="text" class="txt" name="keyword" placeholder="username, nickname"/>
+            Role：
+            @Html.DropDownList("roleId", Model.Roles)
+            <a class="btn" href="javascript:void(0);" id="btnSearch">Search</a>
+        </form>
+    </div>
+    <div class="panel-grid">
+        <table class="grid">
+            <colgroup>
+                <col width="70px"/>
+                <col width="150px"/>
+                <col width="150px"/>
+                <col width="250px"/>
+                <col width="auto"/>
+                <col width="100px"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="center">Avartar</th>
+                    <th class="center sortable sort-asc" data-sort="Nickname">Nicknane</th>
+                    <th class="center sortable" data-sort="Username">Username</th>
+                    <th class="center">Roles</th>
+                    <th>Internal Notes</th>
+                    <th class="center">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="6" class="loading">Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pager">
+        
+        </div>
+    </div>
+</div>

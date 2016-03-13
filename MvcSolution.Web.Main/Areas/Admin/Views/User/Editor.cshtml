@@ -1,0 +1,36 @@
+﻿@model UserEditorViewModel
+<form id="formEditor" method="POST">
+    <input type="hidden" name="userId" value="@Model.User.Id"/>
+    <table class="form">
+        <colgroup>
+            <col width="80px"/>
+            <col width="auto"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td class="label">Nickname：</td>
+                <td>@Model.User.NickName</td>
+            </tr>
+            <tr>
+                <td class="label top">Internal Notes：</td>
+                <td>
+                    <textarea maxlength="250" placeholder="less than 250 chars, only visible to admins" name="notes">@Model.User.InternalNotes</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="label top">Tag：</td>
+                <td id="cellTags">
+                    <ul>
+                        @foreach (var item in Model.Tags)
+                        {
+                            <li>
+                                <input type="checkbox" id="cb@(item.Value)" @Html.IsChecked(item.Selected) value="@item.Value"/>
+                                <label for="cb@(item.Value)">@item.Text</label>
+                            </li>
+                        }    
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

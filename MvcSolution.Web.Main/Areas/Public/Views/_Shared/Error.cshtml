@@ -1,0 +1,12 @@
+﻿@model LayoutViewModel
+@{ 
+    Model.Title = "出错啦";
+}
+<div class="panel">
+    <div class="panel-title">
+        @Model.Title
+    </div>
+    <div class="panel-content">
+        @Model.Error
+    </div>    
+</div>

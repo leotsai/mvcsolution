@@ -1,0 +1,63 @@
+﻿@model LayoutViewModel<User>
+@{
+    Model.Title = "Register Final Step";
+}
+<script src="~/Areas/Public/js/account/register-step2.js"></script>
+<link href="~/Areas/Public/css/pages/account-register-step2.css" rel="stylesheet" />
+<div class="panel">
+    <div class="panel-title">
+        @Model.Title
+    </div>
+    <div class="panel-content">
+        <form id="formRegister" method="POST">
+            <table class="form">
+                <colgroup>
+                    <col width="120px"/>
+                    <col width="auto" />
+                </colgroup>
+                <tr>
+                    <td class="label">Avartar：</td>
+                    <td>
+                        <input type="hidden" value="" name="ImageKey" id="hfImageKey"/>
+                        <div class="line-img">
+                            <div id="imgUploader"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Nickname：</td>
+                    <td>
+                        <input type="text" class="txt" name="nickname" placeholder="required" value="@Model.Model.NickName"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Age：</td>
+                    <td>
+                        <input type="text" class="txt" name="age" placeholder="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Signature：</td>
+                    <td>
+                        <textarea class="txt" name="signature" placeholder="required"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Gender：</td>
+                    <td>
+                        <input type="radio" name="gender" value="male" id="cbMale" checked="checked" />
+                        <label for="cbMale">Male</label>
+                        <input type="radio" name="gender" value="female" id="cbFemale" />
+                        <label for="cbFemale">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td>
+                        <a href="javascript:;" id="btnRegister" class="btn">Complete Registration</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>    
+</div>

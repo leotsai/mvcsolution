@@ -1,0 +1,39 @@
+﻿
+@model LayoutViewModel
+@if (Request.IsAuthenticated)
+{
+    <ul id="mainMenu" class="menu clearfix">
+        @if (User.IsSuperAdmin())
+        {
+            <li id="navUser">
+                <a href="javascript:;" class="menu-more">Manage Users</a>
+                <ul>
+                    <li><a href="/admin/user">Manage Users</a></li>
+                    <li><a href="/admin/role">Manage Managers</a></li>
+                </ul>
+            </li>
+            <li id="navSetting">
+                <a href="javascript:;" class="menu-more">Settings</a>
+                <ul>
+                    <li><a href="/admin/setting">System Settings</a></li>
+                </ul>
+            </li>
+        }
+        else
+        {
+            <li><a href="/admin/login">登录</a></li>
+        }
+    </ul>
+    <ul id="loginStatus" class="menu clearfix">
+        <li id="navMe"><a href="javascript:;">@Model.GetSession().User.NickName</a></li>
+        <li id="navLogout"><a href="/logout">Logout</a></li>
+    </ul>
+}
+else
+{
+    <ul id="mainMenu" class="clearfix">
+        <li id="navUsers">
+            <a href="/login">登录</a>
+        </li>
+    </ul>
+}

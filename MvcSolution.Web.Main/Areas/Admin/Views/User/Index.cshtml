@@ -1,0 +1,60 @@
+﻿@model UserIndexViewModel
+@{
+    Model.Title = "Manage All Registered Users";
+}
+<script src="~/Areas/Admin/js/user/index.js"></script>
+<link href="~/Areas/Admin/css/image-viewer.css" rel="stylesheet" />
+<link href="~/Areas/Admin/css/pages/user-index.css" rel="stylesheet" />
+<div class="panel">
+    <div class="panel-title">
+        @Model.Title
+        <div class="btns-right">
+            <a id="btnTags" href="javascript:;" class="btn">Manage Tags</a>
+            <a id="btnMessage" href="javascript:;" class="btn">Send Message</a>
+        </div>
+    </div>
+    <div class="panel-content">
+        <form id="formSearch" method="POST" >
+            Keyword：
+            <input type="text" id="txtKeyword" class="txt" name="keyword" placeholder="username, nickname, internal notes"/>
+            Tag：
+            @Html.DropDownList("tagId", Model.Tags, new{id = "ddlTags"})
+            
+            <a class="btn" href="javascript:void(0);" id="btnSearch">Search</a>
+        </form>
+    </div>
+    <div class="panel-grid">
+        <table id="gridUsers" class="grid">
+            <colgroup>
+                <col width="90px"/>
+                <col width="250px"/>
+                <col width="auto"/>
+                <col width="150px"/>
+                <col width="150px"/>
+                <col width="150px"/>
+                <col width="200px"/>
+                <col width="70px"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="center">Avartar</th>
+                    <th class="center sortable" data-sort="Username">Username</th>
+                    <th class="sortable" data-sort="InternalNotes">Internal Notes</th>
+                    <th>Tags</th>
+                    <th class="center sortable" data-sort="LastLoginTime">Last Login Time</th>
+                    <th class="center sortable sort-desc" data-sort="CreatedTime">Registration Time</th>
+                    <th class="center sortable" data-sort="RegisterAddress">Registration Address</th>
+                    <th class="center">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="8" class="loading">loading users...</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="pagerUsers" class="pager">
+        
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model List<SimpleEntity>
+<form id="formEditor" method="POST">
+    <table class="form">
+        <colgroup>
+            <col width="80px"/>
+            <col width="auto"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td class="label">Username：</td>
+                <td>
+                    <input type="text" class="txt" name="username" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label top">Role：</td>
+                <td>
+                    @foreach (var item in Model)
+                    {
+                        <input type="checkbox" name="roleIds" value="@item.Id" id="cb@(item.Id)"/>
+                        <label for="cb@(item.Id)">@item.Name</label>
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

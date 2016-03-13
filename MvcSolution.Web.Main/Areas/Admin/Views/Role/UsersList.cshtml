@@ -1,0 +1,27 @@
+﻿@model PageResult<UserRoleDto>
+@{
+    var i = 0;
+}
+@foreach (var item in Model.Value)
+{
+    i++;
+    <tr class="@(i%2 == 0 ? "alt" : string.Empty)">
+        <td class="center cell-avartar">
+            <img src="@ImageHelper.BuildSrc(item.ImageKey, ImageSize.S50X50)" />
+        </td>
+        <td class="center">@item.Nickname</td>
+        <td class="center cell-username">@item.Username</td>
+        <td class="center">@string.Join(", ", item.Roles)</td>
+        <td>@item.InternalNotes</td>
+        <td class="center">
+            <a class="btn-delete" href="javascript:;">remove</a>
+        </td>
+    </tr>
+}
+@if (Model.Value.Count == 0)
+{
+    <tr>
+        <td class="empty" colspan="6">no data found</td>
+    </tr>
+}
+@Html.PagerInfo(Model)

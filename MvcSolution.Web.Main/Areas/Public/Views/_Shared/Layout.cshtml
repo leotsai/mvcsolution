@@ -1,0 +1,47 @@
+﻿@model LayoutViewModel
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="keyword" content="architecture, asp.net mvc, solution architecture, source code, open source" />
+        <title>@Model.Title</title>
+
+        <link href="~/_storage/css/jqueryui/base/jquery-ui.css" rel="stylesheet" />
+        <link href="~/Areas/Public/css/core.css" rel="stylesheet" />
+        <link href="~/Areas/Public/css/pad.css" rel="stylesheet" media="screen and (max-width:1024px)" />
+
+        <script src="~/_storage/js/jquery/jquery-1.7.2.min.js"></script>
+        <script src="~/_storage/js/jquery/jquery-ui-1.8.20.min.js"></script>
+        <script src="~/Areas/Public/js/core.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div class="inner">
+                    <a id="logo" href="/">
+                        MvcSolution.com
+                    </a>
+                    <div id="slogan">
+                        The demo website for <a target="_blank" href="https://github.com/leotsai/mvcsolution">https://github.com/leotsai/mvcsolution</a>
+                        <a class="btn" target="_blank" href="https://github.com/leotsai/mvcsolution">go to github</a>
+                    </div>
+                    <a id="linkAdmin" class="btn" href="/admin">Admin Control Panel</a>
+                </div>
+                <div id="mainNav" class="clearfix">
+                    <div class="inner">
+                        @Html.Partial("~/areas/public/views/_shared/menu.cshtml", Model)
+                    </div>
+                </div>
+            </div>
+            <div id="main">
+                <div class="inner">
+                    @RenderBody()
+                </div>
+            </div>
+            <div id="footer">
+                <div class="inner">
+                    &copy;@("2013 - " + DateTime.Now.Year)
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
