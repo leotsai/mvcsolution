@@ -1,4 +1,4 @@
-﻿MVC Solution.com
+﻿MVC Solution.com-2
 ===========
 
 This repository is to build a complete solution template for ASP.NET MVC, so that you can quickly finish the architecture of an ASP.NET MVC website.
