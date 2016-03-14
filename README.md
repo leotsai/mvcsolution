@@ -46,4 +46,5 @@ First, take a look at the projects and their reference relationships.
 
 7. Misc ([unit tests, grid](#))
 
-
+# License
+MIT. Feel free to use and ask questions. I'm open to any discussion.
