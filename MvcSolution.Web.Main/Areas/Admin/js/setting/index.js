@@ -21,7 +21,7 @@
                 } else {
                     MvcSolution.notification.alertError(result.Message);
                 }
-            }, "保存中...");
+            }, "Saving...");
         });
         $(".btn-cancel").click(function () {
             var $tr = $(this).closest("tr");

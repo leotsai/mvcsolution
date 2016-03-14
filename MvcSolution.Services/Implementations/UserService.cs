@@ -32,7 +32,7 @@ namespace MvcSolution.Services
                 {
                     throw new KnownException("The username doesn't exists");
                 }
-                if (CryptoService.Md5HashEncrypt(password) != password)
+                if (CryptoService.Md5HashEncrypt(password) != user.Password)
                 {
                     throw new KnownException("Incorrect password");
                 }
