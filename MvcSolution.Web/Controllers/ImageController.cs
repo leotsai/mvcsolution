@@ -4,7 +4,6 @@ using System.Web.Mvc;
 using MvcSolution.Data;
 using MvcSolution.Services;
 using MvcSolution.Web.Images;
-using Image = System.Drawing.Image;
 
 namespace MvcSolution.Web.Controllers
 {
@@ -43,7 +42,7 @@ namespace MvcSolution.Web.Controllers
                 {
                     return null;
                 }
-                using (var sysImage = Image.FromFile(originalFile))
+                using (var sysImage = System.Drawing.Image.FromFile(originalFile))
                 {
                     if (parameter.ImageFormat == ImageFormat.Gif)
                     {
