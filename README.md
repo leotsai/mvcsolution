@@ -34,11 +34,11 @@ First, take a look at the projects and their reference relationships.
 ![references](https://raw.githubusercontent.com/leotsai/mvcsolution/master/_doc/images/project%20references.jpg)
 
 # Documentation Index
-1. Get Started ([guide to compile, build and publish](#))
+1. Get Started ([repository overview and guide to compile, build and publish](#))
 
-2. Data Access ([how to define database, tables, how to CRUD](#))
+2. Data Access ([how to define database, tables and how to CRUD](#))
 
-3. Role Based Authorization ([login, logout, role, session](#))
+3. Role Based Authorization ([how to login, logout, role, session](#))
 
 6. JS Architecture ([ajax, grunt, uglify, compressing](#))
 
