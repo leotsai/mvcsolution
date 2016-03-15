@@ -26,3 +26,25 @@ Finally, please remember that this architecture is only a guide for you to archi
 * ORM: **Entity Framework 6.1**
 * Json Serialization: **Newtonsoft 8.0.1**
 * Unit Tests: **NUnit 2.5.10**
+
+# Projects References
+
+First, take a look at the projects and their reference relationships.
+
+![references](https://raw.githubusercontent.com/leotsai/mvcsolution/master/_doc/images/project%20references.jpg)
+
+# Documentation Index
+1. Get Started ([repository overview and guide to compile, build and publish](#))
+
+2. Data Access ([how to define database, tables and how to CRUD](#))
+
+3. Role Based Authorization ([how to login, logout, role, session](#))
+
+6. JS Architecture ([ajax, grunt, uglify, compressing](#))
+
+6. CSS Architecture ([simply describe the file structure](#))
+
+7. Misc ([unit tests, grid](#))
+
+# License
+MIT. Feel free to use and ask questions. I'm open to any discussion.
