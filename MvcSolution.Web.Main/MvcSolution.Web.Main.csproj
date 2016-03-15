@@ -479,9 +479,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="_grunt\Gruntfile.js" />
+    <None Include="_grunt\Gruntfile.js" />
     <Content Include="Areas\Public\Views\_Shared\Menu.cshtml" />
-    <Content Include="packages.config" />
+    <None Include="packages.config" />
     <Content Include="Areas\Public\Views\_Shared\Error.cshtml" />
     <Content Include="Areas\Public\Views\_Shared\Message.cshtml" />
     <Content Include="Areas\Public\Views\Home\Doc.cshtml" />
