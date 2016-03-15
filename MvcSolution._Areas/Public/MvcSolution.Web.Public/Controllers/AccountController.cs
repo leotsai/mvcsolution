@@ -71,7 +71,7 @@ namespace MvcSolution.Web.Public.Controllers
                 }
                 if (username.IsEmail() == false)
                 {
-                    throw new KnownException("The userame field should an email address");
+                    throw new KnownException("The username field should be an email address");
                 }
                 var service = Ioc.Get<IUserService>();
                 service.Register(username, password, registerAsAdmin ?? false);
