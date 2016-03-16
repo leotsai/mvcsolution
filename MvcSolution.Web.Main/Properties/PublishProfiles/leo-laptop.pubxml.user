@@ -85,16 +85,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/13/2016 15:28:48</publishTime>
     </File>
     <File Include="Areas/Admin/js/core.js">
-      <publishTime>03/13/2016 16:02:13</publishTime>
+      <publishTime>03/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Areas/Admin/js/role/index.js">
-      <publishTime>03/14/2016 15:33:07</publishTime>
+      <publishTime>03/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Areas/Admin/js/setting/index.js">
-      <publishTime>03/14/2016 15:33:08</publishTime>
+      <publishTime>03/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Areas/Admin/js/user/index.js">
-      <publishTime>03/14/2016 15:33:07</publishTime>
+      <publishTime>03/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Role/Add.cshtml">
       <publishTime>03/13/2016 15:56:46</publishTime>
@@ -211,16 +211,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/12/2016 17:36:24</publishTime>
     </File>
     <File Include="Areas/Public/js/account/login.js">
-      <publishTime>03/14/2016 15:33:09</publishTime>
+      <publishTime>03/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Areas/Public/js/account/register-step1.js">
-      <publishTime>03/14/2016 15:33:08</publishTime>
+      <publishTime>03/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Areas/Public/js/account/register-step2.js">
-      <publishTime>03/14/2016 15:33:08</publishTime>
+      <publishTime>03/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Areas/Public/js/core.js">
-      <publishTime>03/14/2016 15:33:09</publishTime>
+      <publishTime>03/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Areas/Public/Views/Account/Login.cshtml">
       <publishTime>03/12/2016 15:42:58</publishTime>
@@ -277,31 +277,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/03/2016 09:46:36</publishTime>
     </File>
     <File Include="bin/MvcSolution.Data.dll">
-      <publishTime>03/14/2016 15:34:21</publishTime>
+      <publishTime>03/14/2016 15:52:39</publishTime>
     </File>
     <File Include="bin/MvcSolution.Infrastructure.dll">
-      <publishTime>03/14/2016 15:34:20</publishTime>
+      <publishTime>03/14/2016 15:52:39</publishTime>
     </File>
     <File Include="bin/MvcSolution.Services.Admin.dll">
-      <publishTime>03/14/2016 15:34:22</publishTime>
+      <publishTime>03/14/2016 15:52:40</publishTime>
     </File>
     <File Include="bin/MvcSolution.Services.dll">
-      <publishTime>03/14/2016 15:34:21</publishTime>
+      <publishTime>03/14/2016 15:52:40</publishTime>
     </File>
     <File Include="bin/MvcSolution.Services.Public.dll">
-      <publishTime>03/14/2016 15:34:22</publishTime>
+      <publishTime>03/14/2016 15:52:40</publishTime>
     </File>
     <File Include="bin/MvcSolution.Web.Admin.dll">
-      <publishTime>03/14/2016 15:34:22</publishTime>
+      <publishTime>03/14/2016 15:52:40</publishTime>
     </File>
     <File Include="bin/MvcSolution.Web.dll">
-      <publishTime>03/14/2016 15:34:21</publishTime>
+      <publishTime>03/14/2016 15:52:40</publishTime>
     </File>
     <File Include="bin/MvcSolution.Web.Main.dll">
-      <publishTime>03/14/2016 15:34:27</publishTime>
+      <publishTime>03/14/2016 19:06:47</publishTime>
     </File>
     <File Include="bin/MvcSolution.Web.Public.dll">
-      <publishTime>03/14/2016 15:34:22</publishTime>
+      <publishTime>03/14/2016 15:52:40</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>02/03/2016 09:46:36</publishTime>
@@ -364,7 +364,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/03/2016 09:24:33</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/14/2016 15:34:27</publishTime>
+      <publishTime>03/14/2016 19:05:15</publishTime>
     </File>
     <File Include="_grunt/Gruntfile.js">
       <publishTime>03/13/2016 16:00:53</publishTime>

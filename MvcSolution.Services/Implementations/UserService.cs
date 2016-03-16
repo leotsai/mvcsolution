@@ -36,6 +36,8 @@ namespace MvcSolution.Services
                 {
                     throw new KnownException("Incorrect password");
                 }
+                user.LastLoginTime = DateTime.Now;
+                db.SaveChanges();
             }
         }
 
