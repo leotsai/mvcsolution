@@ -1,3 +1,5 @@
+如果遇到问题，可以进QQ群：539301714。群里的高手还有我会尽量尽快帮你解决问题。
+
 # About this repository
 
 This repository is aimed to share our ASP.NET MVC architecture, which defines many of the coding standards to achieve clean code. We have enjoyed a lot of benifits from it:
