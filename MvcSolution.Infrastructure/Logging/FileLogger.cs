@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Timers;
-using System.Web;
 
 namespace MvcSolution
 {
     public class FileLogger : DisposableBase, ILogger
     {
         private const int IntervalSeconds = 1;
-        private const long MaxPerFileBytes = 10240;
+        private const long MaxPerFileBytes = 1024000;
         private readonly Dictionary<string, LoggingGroup> _dict;
         private readonly Timer _timer;
         private bool _busy = false;
