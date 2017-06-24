@@ -9,6 +9,7 @@ namespace MvcSolution.Web.Main
         protected override void OnApplicationStart()
         {
             SettingContext.Instance.Init();
+            LogHelper.Logger.Start();
         }
 
         protected override void RegisterRoutes(RouteCollection routes)
@@ -28,6 +29,7 @@ namespace MvcSolution.Web.Main
         protected override void RegisterIoc()
         {
             Ioc.RegisterInheritedTypes(typeof(ServiceBase).Assembly, typeof(ServiceBase));
+            Ioc.Register<ILogger, FileLogger>();
         }
     }
 }

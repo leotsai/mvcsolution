@@ -75,7 +75,7 @@ namespace MvcSolution.Web
                     return;
                 }
             }
-            Logger.Error("MvcApplication.OnError", exception);
+            LogHelper.TryLog("MvcApplication.OnError", exception);
             Server.ClearError();
         }
 

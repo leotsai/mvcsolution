@@ -38,7 +38,7 @@ namespace MvcSolution.Services
                 var stream = client.OpenRead(url);
                 if (stream == null)
                 {
-                    Logger.Error("ImageService.DownloadAndReturnKey", url);
+                    LogHelper.TryLog("ImageService.DownloadAndReturnKey", url);
                     return null;
                 }
                 var fileName = userId + DateTime.Now.ToString("yyyyMMMMddhhmmss") + ".jpg";
@@ -121,7 +121,7 @@ namespace MvcSolution.Services
             }
             catch (Exception ex)
             {
-                Logger.Error("ImageService.TryRotateImage", ex);
+                LogHelper.TryLog("ImageService.TryRotateImage", ex);
             }
         }
 

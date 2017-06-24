@@ -22,7 +22,7 @@ namespace MvcSolution.Web.Controllers
 
         protected override void OnException(ExceptionContext filterContext)
         {
-            Logger.Error("MvcSolutionControllerBase.OnException", filterContext.Exception);
+            LogHelper.TryLog("MvcSolutionControllerBase.OnException", filterContext.Exception);
 
             if (_actionReturnType == null)
             {

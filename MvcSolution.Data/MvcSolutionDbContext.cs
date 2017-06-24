@@ -55,7 +55,7 @@ namespace MvcSolution.Data
                         sb.AppendLine(item.PropertyName + ": " + item.ErrorMessage);
                     }
                 }
-                Logger.Error("SaveChanges.DbEntityValidation", ex.GetAllMessages() + sb);
+                LogHelper.TryLog("SaveChanges.DbEntityValidation", ex.GetAllMessages() + sb);
                 throw;
             }
         }

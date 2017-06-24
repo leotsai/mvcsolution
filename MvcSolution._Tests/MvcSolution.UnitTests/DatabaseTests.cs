@@ -8,45 +8,17 @@ namespace MvcSolution.UnitTests
 {
     public class DatabaseTests
     {
-        public const string DbName = "MvcSolution";
-
         [Test]
         public void Can_RecreateDatabase()
         {
-            var context = new MvcSolutionDbContext();
-            var sql =
-                @"
-USE MASTER  
-DECLARE @i INT  
-SELECT   @i=1  
-DECLARE @sSPID VARCHAR(100)
-DECLARE KILL_CUR SCROLL CURSOR FOR    
-SELECT SPID FROM sysprocesses WHERE DBID=DB_ID('" + DbName + @"')                           
-OPEN KILL_CUR                  
-IF @@CURSOR_ROWS=0 GOTO END_KILL_CUR  
-FETCH FIRST FROM KILL_CUR INTO @sSPID              
-EXEC('KILL   '+@sSPID)                
-WHILE @i<@@CURSOR_ROWS  
-BEGIN      
-    FETCH NEXT FROM KILL_CUR INTO @sSPID              
-    EXEC('KILL '+@sSPID)  
-    SELECT @i=@i+1  
-END  
-END_KILL_CUR:  
-CLOSE KILL_CUR  
-DEALLOCATE KILL_CUR";
-            if (context.Database.Exists())
+            using (var context = new MvcSolutionDbContext())
             {
-                try
+                if (context.Database.Exists())
                 {
-                    context.Database.ExecuteSqlCommand(sql);
+                    context.Database.Delete();
                 }
-                catch (Exception)
-                {
-                }
+                context.Database.Create();
             }
-            context.Database.Delete();
-            context.Database.Create();
         }
 
         [Test]

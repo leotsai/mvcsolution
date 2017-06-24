@@ -23,7 +23,7 @@ namespace MvcSolution.Services
             }
             catch (Exception ex)
             {
-                Logger.Error("ServiceBase.Try", ex);
+                LogHelper.TryLog("ServiceBase.Try", ex);
             }
         }
     }
