@@ -31,7 +31,7 @@ namespace MvcSolution.Web.Public.Controllers
             LogHelper.TryLog("home-log", "阿克大厦卡萨丁卡萨丁，暗杀神大，啊实打实大拉圣诞快乐啊，阿萨斯柯达速度快八十多，啊实打实大咖快睡吧");
             return new ContentResult(){Content = "ok"};
         }
-
+        
         public ActionResult Loge()
         {
             try
