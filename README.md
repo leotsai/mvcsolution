@@ -2,6 +2,8 @@
 
 # About this repository
 
+You can work on updated version of ASP.NET MVC version. 
+
 This repository is aimed to share our ASP.NET MVC architecture, which defines many of the coding standards to achieve clean code. We have enjoyed a lot of benifits from it:
 
 - few methods exceed 50 lines of code;
